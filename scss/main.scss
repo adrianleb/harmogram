@@ -1,0 +1,265 @@
+$black :#222;
+$white:#fff;
+$lightgray:darken($white, 10%);
+
+$testcolor:#f24021;
+
+  @mixin keyframes ($name) {
+    @-webkit-keyframes $name { @content }
+       @-moz-keyframes $name { @content }
+         @-o-keyframes $name { @content }
+            @keyframes $name { @content }
+  }
+
+  @mixin animate ($name, $duration, $type:infinite, $ease:linear) {
+    -webkit-animation: $name $duration $type $ease;
+       -moz-animation: $name $duration $type $ease;
+         -o-animation: $name $duration $type $ease;
+            animation: $name $duration $type $ease;
+  }
+
+@mixin respond($word, $val, $secondVal:"") {
+  @if $word == from { @media all and (min-width: $val )  { @content; } }
+  @if $word == between { @media all and (min-width: $val ) and (max-width: $secondVal) { @content; } }
+  @if $word == until { @media all and (max-width: $val )  { @content; } }
+}
+
+
+
+@import "_fonts";
+@import "_header";
+@import "_about";
+@import "_roll";
+*,*:before, *:after {
+  box-sizing:border-box;
+}
+* {
+  position:relative;
+  margin:0;
+  padding:0;
+  -webkit-font-smoothing:antialiased;
+}
+
+
+
+%display_font {
+  font-family:"jaf-facitweb", "Helvetica Neue", Arial, sans-serif;
+}
+// moree
+
+
+// CLEARFIX the 'Beat that clear fix' 2012 way
+// http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+// ======================================================================
+@mixin clearfix {
+ &:after { content:""; display:table; clear:both; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body, html {
+    padding: 0;
+  margin: 0;
+}
+html {
+  font-size:65.5%;
+      overflow:auto;
+    background-color:#F0EDE6;
+}
+
+body {
+  font-size:1.6rem;
+  @extend %display_font;
+    width:100%;
+  display:block;
+  min-height:100%;
+
+}
+
+a {
+  color:inherit;
+}
+
+
+.container {
+    width:100%;
+    overflow:hidden;
+    @include clearfix;
+}
+
+
+
+
+
+.wrap {
+  @include clearfix;
+  -webkit-transition:all 0.5s ease-out;
+  -moz-transition:all 0.5s ease-out;
+  transition:all 0.5s ease-out;
+  // body.flap_about & {
+      // -webkit-transform:translateX(-90%);
+    // } 
+}
+
+
+footer {
+  top:auto;
+  bottom:0;
+  p {
+    padding-left:5%;
+    padding-bottom:2.5%;
+    font-size:1.4rem;
+  }
+}
+.color {
+  z-index: 3;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color:#F0EDE6;
+
+  -webkit-transition:all 0.25s linear;
+  -moz-transition:all 0.25s linear;
+  transition:all 0.25s linear;
+
+}
+
+.isle {
+  width:100%;
+  padding-bottom:60%;
+  position:relative;
+  left:0;
+  display:block;
+  z-index: 3;
+  section {display:block; @include clearfix; height:100%;}
+
+  margin-bottom:130%;
+
+  &:first-child {
+    margin-top:30%;
+  }
+
+
+// .row {float:right;}
+.sample {
+  display:inline-block;
+  background-color:$testcolor;
+  width:30%;
+  padding-bottom:30%;
+  margin-top:5%;
+  margin-left:5%;
+  margin-right:-2.5%;
+}
+
+h1 {
+  font-size:4rem;
+  color:inherit;
+}
+h2 {
+  width:100%;
+  height:auto;
+    word-wrap: break-word;
+    display:block;
+    // background-color:red;
+}
+
+.details {
+  vertical-align:top;
+    padding-top:3%;
+    padding-left:5%;
+    margin-right:2.5%;
+    display:inline-block;
+}
+.others {
+  padding-top:5%;
+  // padding-left:40%;
+  p { color:inherit; font-size:1.6rem; position:relative; line-height:2;}
+  .color_type {
+    text-align:left;
+    width:6rem;
+    display:inline-block;
+    &:after  {
+      content: "";
+      display:inline-block;
+      float:right;
+    }
+  }
+  .color_val {
+    // margin-left:1rem;
+    font-weight:bold;
+  }
+  padding-bottom:7.5%;
+  margin-left:5%;
+
+}
+}
+
+
+
+// do font opacity thigny
+// 
+
+  body {
+    opacity:1;
+    -webkit-transition:opacity 0.25s linear;
+    -moz-transition:opacity 0.25s linear;
+    transition:opacity 0.25s linear;
+    .wf-loading:not(.wf-inactive) & {opacity:0;}
+  }
+
+
+
+  .track__wrap {
+    position: absolute;
+    top:0;
+    padding:5%;
+    left: 0;
+    width:100%;
+    z-index: 999999
+  }
+
+  .track__model {
+    display: inline-block;
+    width:10rem;
+    height: 10rem;
+  }
+  .track__image {
+    background-color: white;
+    overflow: hidden;
+    border-radius: 100%;
+    width:50%;
+    height:0;
+    padding-bottom: 50%;
+    background-size: cover;
+  }
+
+@include respond(until, '800px') {
+  .isle:last-child {margin-bottom:10%;}
+  footer {position:absolute!important;
+
+    bottom:0;}
+  .roll {
+    // width:100%;
+    // left:10%;
+    float:none;
+    top:5%;
+    width:80%;
+    left:10%;
+  }
+}
+
+
