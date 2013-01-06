@@ -13,7 +13,7 @@
 
     Tracks.prototype.model = Sounder.Models.Track;
 
-    Tracks.prototype.url = 'http://api.shuffler.fm/v1/channels/artist:36376?api-key=zlspn5imm91ak2z7nk3g';
+    Tracks.prototype.url = 'http://api.shuffler.fm/v1/channels/chillout?api-key=kscothchd0q6c7u2pfw1';
 
     return Tracks;
 

@@ -15,6 +15,10 @@
 
     Track.prototype.className = 'track__model';
 
+    Track.prototype.events = {
+      'click ': 'play'
+    };
+
     Track.prototype.initialize = function(model) {
       this.model = model.model;
       return this.render();
@@ -25,16 +29,18 @@
       this.$el.html(this.template({
         model: this.model
       }));
-      this.$el.on('click', function(e) {
-        return _this.play(e);
+      this.$('audio').on('ended', function(e) {
+        Sounder.player.currentTrack += 1;
+        return Sounder.player.playCurrent();
       });
       return this;
     };
 
     Track.prototype.play = function(e) {
       e.preventDefault();
-      console.log('heeeeeey', this.$('audio').data('track-index', this.$('audio')));
-      return $(Sounder.player).trigger('playIndex', this.$('audio').data('track-index'));
+      homer.$('.active').removeClass('active');
+      $(e.currentTarget).addClass('active');
+      return $(Sounder.player).trigger('playAudio', this.$('audio'));
     };
 
     return Track;

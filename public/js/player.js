@@ -17,14 +17,12 @@
     Player.prototype.initEvents = function(el) {
       var _this = this;
       $(this).on('newAudio', function(e, el) {
-        console.log('new source', el);
-        _this.audioPlayers.push(el);
-        return _this.renderPlaylist();
+        return _this.audioPlayers.push(el);
       });
       $(this).on('playLast', function(e) {
         return _this.playLast();
       });
-      return $(this).on('playIndex', function(e, index) {
+      $(this).on('playIndex', function(e, index) {
         if (_this.currentTrack === index && _this.isPlaying) {
           return _this.pauseCurrent();
         } else {
@@ -32,19 +30,16 @@
           return _this.playCurrent();
         }
       });
-    };
-
-    Player.prototype.renderPlaylist = function() {
-      var player, _i, _len, _ref, _results,
-        _this = this;
-      $('#playlist').html('');
-      _ref = this.audioPlayers;
-      _results = [];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        player = _ref[_i];
-        _results.push((function(player) {})(player));
-      }
-      return _results;
+      return $(this).on('playAudio', function(e, audio) {
+        var i;
+        i = _this.audioPlayers.indexOf(audio);
+        if (_this.currentTrack === i && _this.isPlaying) {
+          return _this.pauseCurrent();
+        } else {
+          _this.currentTrack = i;
+          return _this.playCurrent();
+        }
+      });
     };
 
     Player.prototype.pauseCurrent = function() {
@@ -74,14 +69,21 @@
       return this.isPlaying = true;
     };
 
+    Player.prototype.emptyPlayer = function() {
+      this.audioPlayers = [];
+      return this.currentTrack = 0;
+    };
+
     Player.prototype.playCurrent = function() {
-      var current, i;
+      var current;
       if (this.isPlaying) {
         this.pauseCurrent();
       }
-      i = this.audioPlayers.indexOf(this.currentTrack);
-      current = this.audioPlayers[i];
+      current = this.audioPlayers[this.currentTrack];
       current.play();
+      homer.$('.active').removeClass('active');
+      homer.scrollCurrent();
+      $(current).parent().addClass('active');
       $(Sounder.renderer).trigger('start');
       return this.isPlaying = true;
     };

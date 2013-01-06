@@ -1,0 +1,8 @@
+<% console.log @url, @index %>
+  <div class="track__image">
+  </div>
+  <div class="track__info">
+    <h1 class="track__artist">NN</h1>
+    <h2 class="track__title">NN</h2>
+  </div>
+  <audio id="source<%= @index %>"  data-track-index="<%= @index %>" src="<%= @url %>" ></audio>

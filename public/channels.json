@@ -1,0 +1,920 @@
+[
+{
+image: "http://assets.shuffler.fm/tracks/92b3622be13cbb852f91ea2e0b6b1b54/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/electronic?api-key=zlspn5imm91ak2z7nk3g",
+id: 13,
+name: "electronic"
+},
+{
+image: "http://assets.shuffler.fm/tracks/f6f24d02b4c87779fd2a50910043f039/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/indie?api-key=zlspn5imm91ak2z7nk3g",
+id: 22,
+name: "indie"
+},
+{
+image: "http://assets.shuffler.fm/tracks/06426daaf9b276612ec8717c997cb972/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/hip-hop?api-key=zlspn5imm91ak2z7nk3g",
+id: 2,
+name: "hip-hop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/c884bf66bf6c7b6171b487ca1fc10c3a/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/mixtape?api-key=zlspn5imm91ak2z7nk3g",
+id: 36732,
+name: "mixtape"
+},
+{
+image: "http://assets.shuffler.fm/tracks/8b6381a0680bf96f4dbd779c81eaf603/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/folk?api-key=zlspn5imm91ak2z7nk3g",
+id: 85,
+name: "folk"
+},
+{
+image: "http://assets.shuffler.fm/tracks/06426daaf9b276612ec8717c997cb972/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/rap?api-key=zlspn5imm91ak2z7nk3g",
+id: 128,
+name: "rap"
+},
+{
+image: "http://assets.shuffler.fm/tracks/f6f24d02b4c87779fd2a50910043f039/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/experimental?api-key=zlspn5imm91ak2z7nk3g",
+id: 45,
+name: "experimental"
+},
+{
+image: "http://assets.shuffler.fm/tracks/11864d046b87dde259c8f21d5912cbe2/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 16,
+name: "rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/86c9b143875a7a196ce3c94dfb52e45c/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/dubstep?api-key=zlspn5imm91ak2z7nk3g",
+id: 5,
+name: "dubstep"
+},
+{
+image: "http://assets.shuffler.fm/tracks/54af9d674f5930d534a3e9dd42bf5249/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/pop?api-key=zlspn5imm91ak2z7nk3g",
+id: 310,
+name: "pop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/aa976dc55be82581ecc42a309102c0cd/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/indie%20rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 44,
+name: "indie rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/087cfdb94de4400a635d7ef371e2561e/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/house?api-key=zlspn5imm91ak2z7nk3g",
+id: 187,
+name: "house"
+},
+{
+image: "http://assets.shuffler.fm/tracks/54af9d674f5930d534a3e9dd42bf5249/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/female%20vocalists?api-key=zlspn5imm91ak2z7nk3g",
+id: 158,
+name: "female vocalists"
+},
+{
+image: "http://assets.shuffler.fm/tracks/cf7a2d3bb93cf2eb02a71a8bc15bc690/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/lo-fi?api-key=zlspn5imm91ak2z7nk3g",
+id: 53,
+name: "lo-fi"
+},
+{
+image: "http://assets.shuffler.fm/tracks/acec97252320f402f8f4a849ba0a78fb/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/singer-songwriter?api-key=zlspn5imm91ak2z7nk3g",
+id: 114,
+name: "singer-songwriter"
+},
+{
+image: "http://assets.shuffler.fm/tracks/6e09f5df7c14f20701f3e9b390d25a4e/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/alternative?api-key=zlspn5imm91ak2z7nk3g",
+id: 32,
+name: "alternative"
+},
+{
+image: "http://assets.shuffler.fm/tracks/34758e8253a501a9070602d4f562e8b9/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/soul?api-key=zlspn5imm91ak2z7nk3g",
+id: 55,
+name: "soul"
+},
+{
+image: "http://assets.shuffler.fm/tracks/c53cbf442b9d28b73538cf2505106f56/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/indie%20pop?api-key=zlspn5imm91ak2z7nk3g",
+id: 19,
+name: "indie pop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/bbf500c2656f2b61a5bebc89897ec4e1/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/ambient?api-key=zlspn5imm91ak2z7nk3g",
+id: 41,
+name: "ambient"
+},
+{
+image: "http://assets.shuffler.fm/tracks/92b3622be13cbb852f91ea2e0b6b1b54/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/electro?api-key=zlspn5imm91ak2z7nk3g",
+id: 25,
+name: "electro"
+},
+{
+image: "http://assets.shuffler.fm/tracks/34758e8253a501a9070602d4f562e8b9/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/rnb?api-key=zlspn5imm91ak2z7nk3g",
+id: 400,
+name: "rnb"
+},
+{
+image: "http://assets.shuffler.fm/tracks/02c6390dbe4258cdb50cefe312031854/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/psychedelic?api-key=zlspn5imm91ak2z7nk3g",
+id: 124,
+name: "psychedelic"
+},
+{
+image: "http://assets.shuffler.fm/tracks/92b3622be13cbb852f91ea2e0b6b1b54/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/chillwave?api-key=zlspn5imm91ak2z7nk3g",
+id: 203,
+name: "chillwave"
+},
+{
+image: "http://assets.shuffler.fm/tracks/07aa1575d9315940a8c841dbfeec1f34/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/under%202000%20listeners?api-key=zlspn5imm91ak2z7nk3g",
+id: 323,
+name: "under 2000 listeners"
+},
+{
+image: "http://assets.shuffler.fm/tracks/c8b2aeedb1ccc38d4fbb547b841af49d/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/shoegaze?api-key=zlspn5imm91ak2z7nk3g",
+id: 78,
+name: "shoegaze"
+},
+{
+image: "http://assets.shuffler.fm/tracks/63a01c7f35159603389c32ef28b93326/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/punk?api-key=zlspn5imm91ak2z7nk3g",
+id: 71,
+name: "punk"
+},
+{
+image: "http://assets.shuffler.fm/tracks/99c16b12885e48a8c4585251b8e744f2/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/dream%20pop?api-key=zlspn5imm91ak2z7nk3g",
+id: 52,
+name: "dream pop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/087cfdb94de4400a635d7ef371e2561e/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/techno?api-key=zlspn5imm91ak2z7nk3g",
+id: 287,
+name: "techno"
+},
+{
+image: "http://assets.shuffler.fm/tracks/19ae1d5aa692ad081f4f9b5e8d68af0b/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/post-punk?api-key=zlspn5imm91ak2z7nk3g",
+id: 146,
+name: "post-punk"
+},
+{
+image: "http://assets.shuffler.fm/tracks/07aa1575d9315940a8c841dbfeec1f34/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/funk?api-key=zlspn5imm91ak2z7nk3g",
+id: 28,
+name: "funk"
+},
+{
+image: "http://assets.shuffler.fm/tracks/9fb960cb00f8e00e17b5d9b8dbde1321/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/jazz?api-key=zlspn5imm91ak2z7nk3g",
+id: 325,
+name: "jazz"
+},
+{
+image: "http://assets.shuffler.fm/tracks/d8c0c4e91eac316a7d0a6b11bc02c1a2/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/classic%20rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 113,
+name: "classic rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/ad8ba0c46186525f0a5807814c2c6bfe/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/dance?api-key=zlspn5imm91ak2z7nk3g",
+id: 99,
+name: "dance"
+},
+{
+image: "http://assets.shuffler.fm/tracks/bbf500c2656f2b61a5bebc89897ec4e1/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/minimal?api-key=zlspn5imm91ak2z7nk3g",
+id: 219,
+name: "minimal"
+},
+{
+image: "http://assets.shuffler.fm/tracks/15c3e987ce8489099cddfcd5bfd44c45/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/garage%20rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 365,
+name: "garage rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/07aa1575d9315940a8c841dbfeec1f34/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/canadian?api-key=zlspn5imm91ak2z7nk3g",
+id: 399,
+name: "canadian"
+},
+{
+image: "http://assets.shuffler.fm/tracks/1142931a34991b86ad27109c4fa6995a/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/acoustic?api-key=zlspn5imm91ak2z7nk3g",
+id: 241,
+name: "acoustic"
+},
+{
+image: "http://assets.shuffler.fm/tracks/bbf500c2656f2b61a5bebc89897ec4e1/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/idm?api-key=zlspn5imm91ak2z7nk3g",
+id: 151,
+name: "idm"
+},
+{
+image: "http://assets.shuffler.fm/tracks/7bc1bce8914029ccf92d8db43f203edb/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/hardcore?api-key=zlspn5imm91ak2z7nk3g",
+id: 874,
+name: "hardcore"
+},
+{
+image: "http://assets.shuffler.fm/tracks/275658d97ace962a483000f485e67529/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/electronica?api-key=zlspn5imm91ak2z7nk3g",
+id: 125,
+name: "electronica"
+},
+{
+image: "http://assets.shuffler.fm/tracks/26c88da1d36dad5616830a49feeaee2e/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/synthpop?api-key=zlspn5imm91ak2z7nk3g",
+id: 377,
+name: "synthpop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/774c46f11162e0ce59215113f3afa2c5/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/new%20wave?api-key=zlspn5imm91ak2z7nk3g",
+id: 544,
+name: "new wave"
+},
+{
+image: "http://assets.shuffler.fm/tracks/ff859d7249e7d2d9713b482839e5c113/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/british?api-key=zlspn5imm91ak2z7nk3g",
+id: 1112,
+name: "british"
+},
+{
+image: "http://assets.shuffler.fm/tracks/f827496fa66608c8f017550c29494240/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/underground%20hip-hop?api-key=zlspn5imm91ak2z7nk3g",
+id: 135,
+name: "underground hip-hop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/b9299dab2d719e97c85d473b7cf9bff9/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/swedish?api-key=zlspn5imm91ak2z7nk3g",
+id: 343,
+name: "swedish"
+},
+{
+image: "http://assets.shuffler.fm/tracks/ba0f2565c313262f39db28c5830ac980/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/drum%20and%20bass?api-key=zlspn5imm91ak2z7nk3g",
+id: 1211,
+name: "drum and bass"
+},
+{
+image: "http://assets.shuffler.fm/tracks/13d86f40c81e822658100f1d28c79151/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/alt-country?api-key=zlspn5imm91ak2z7nk3g",
+id: 87,
+name: "alt-country"
+},
+{
+image: "http://assets.shuffler.fm/tracks/9b01bfad601658983c01d6559ddd946a/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/disco?api-key=zlspn5imm91ak2z7nk3g",
+id: 109,
+name: "disco"
+},
+{
+image: "http://assets.shuffler.fm/tracks/9fb960cb00f8e00e17b5d9b8dbde1321/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/blues?api-key=zlspn5imm91ak2z7nk3g",
+id: 174,
+name: "blues"
+},
+{
+image: "http://assets.shuffler.fm/tracks/5157ef1e6e882088110639fc73878c57/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/instrumental%20hip-hop?api-key=zlspn5imm91ak2z7nk3g",
+id: 743,
+name: "instrumental hip-hop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/c59e7ad9a976957bd461e8ba7a318812/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/hard%20rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 2768,
+name: "hard rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/2cda9ff4f3d52dd6136a04dfe22c28ed/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/alternative%20rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 117,
+name: "alternative rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/3c6e1ad4d39957508591ca6f0bc37e3d/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/post-rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 36,
+name: "post-rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/e5959267f67187cb2741da8953abeb5a/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/chillout?api-key=zlspn5imm91ak2z7nk3g",
+id: 303,
+name: "chillout"
+},
+{
+image: "http://assets.shuffler.fm/tracks/12c78abb196faf88680beff8583a980e/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/deep%20house?api-key=zlspn5imm91ak2z7nk3g",
+id: 289,
+name: "deep house"
+},
+{
+image: "http://assets.shuffler.fm/tracks/c9b169bc668c5268d1c17f2f5cf696ae/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/80s?api-key=zlspn5imm91ak2z7nk3g",
+id: 196,
+name: "80s"
+},
+{
+image: "http://assets.shuffler.fm/tracks/774c46f11162e0ce59215113f3afa2c5/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/french?api-key=zlspn5imm91ak2z7nk3g",
+id: 616,
+name: "french"
+},
+{
+image: "http://assets.shuffler.fm/tracks/67c18430a2880c446afc6ed317bbb599/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/instrumental?api-key=zlspn5imm91ak2z7nk3g",
+id: 132,
+name: "instrumental"
+},
+{
+image: "http://assets.shuffler.fm/tracks/8393a0d4f300710e4b0860d642f48371/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/trip-hop?api-key=zlspn5imm91ak2z7nk3g",
+id: 161,
+name: "trip-hop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/c9e1aeb6389c8e7e837aede51c7b64bc/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/pop%20punk?api-key=zlspn5imm91ak2z7nk3g",
+id: 1427,
+name: "pop punk"
+},
+{
+image: "http://assets.shuffler.fm/tracks/404f5ff4c0f5c68a43568b70ff14832d/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/country?api-key=zlspn5imm91ak2z7nk3g",
+id: 2061,
+name: "country"
+},
+{
+image: "http://assets.shuffler.fm/tracks/cf91201f3fd4fb77462297fbab6f6232/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/electropop?api-key=zlspn5imm91ak2z7nk3g",
+id: 29,
+name: "electropop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/9eab9dab89fa53f4b66abd01a7f3b1fe/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/noise?api-key=zlspn5imm91ak2z7nk3g",
+id: 646,
+name: "noise"
+},
+{
+image: "http://assets.shuffler.fm/tracks/f0cc2a9815fbd0d0c9f836f23a91ec08/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/reggae?api-key=zlspn5imm91ak2z7nk3g",
+id: 472,
+name: "reggae"
+},
+{
+image: "http://assets.shuffler.fm/tracks/15c3e987ce8489099cddfcd5bfd44c45/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/punk%20rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 437,
+name: "punk rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/f14806bfc4b8b77325e587a9c68f6f29/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/progressive%20rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 551,
+name: "progressive rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/41f75727dd889c41bf5d13be201920f5/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/heavy%20metal?api-key=zlspn5imm91ak2z7nk3g",
+id: 911,
+name: "heavy metal"
+},
+{
+image: "http://assets.shuffler.fm/tracks/f14806bfc4b8b77325e587a9c68f6f29/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/downtempo?api-key=zlspn5imm91ak2z7nk3g",
+id: 59,
+name: "downtempo"
+},
+{
+image: "http://assets.shuffler.fm/tracks/3eb87183e1c669045687065b3557df7d/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/post-hardcore?api-key=zlspn5imm91ak2z7nk3g",
+id: 214,
+name: "post-hardcore"
+},
+{
+image: "http://assets.shuffler.fm/tracks/f14806bfc4b8b77325e587a9c68f6f29/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/trance?api-key=zlspn5imm91ak2z7nk3g",
+id: 238,
+name: "trance"
+},
+{
+image: "http://assets.shuffler.fm/tracks/9a061c338943708d438184cd59cf209a/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/mashup?api-key=zlspn5imm91ak2z7nk3g",
+id: 143,
+name: "mashup"
+},
+{
+image: "http://assets.shuffler.fm/tracks/597702a68142b4ff01d9e123d524ea5f/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/future%20garage?api-key=zlspn5imm91ak2z7nk3g",
+id: 12753,
+name: "future garage"
+},
+{
+image: "http://assets.shuffler.fm/tracks/6b7031a4da6f3188438e43729e246b96/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/beats?api-key=zlspn5imm91ak2z7nk3g",
+id: 1534,
+name: "beats"
+},
+{
+image: "http://assets.shuffler.fm/tracks/2955cca40de1b22eb98c8fc6bb1202c7/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/drone?api-key=zlspn5imm91ak2z7nk3g",
+id: 425,
+name: "drone"
+},
+{
+image: "http://assets.shuffler.fm/tracks/c296e78721cabf7538946736cd84367b/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/thrash%20metal?api-key=zlspn5imm91ak2z7nk3g",
+id: 463,
+name: "thrash metal"
+},
+{
+image: "http://assets.shuffler.fm/tracks/ecc20d8b739790c16b1092289e268b0e/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/britpop?api-key=zlspn5imm91ak2z7nk3g",
+id: 441,
+name: "britpop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/d30f7d6eb1bb0d7dea1d82707e1ca7e5/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/electro%20house?api-key=zlspn5imm91ak2z7nk3g",
+id: 1491,
+name: "electro house"
+},
+{
+image: "http://assets.shuffler.fm/tracks/7518255e71d57314fb621a359b266d79/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/noise%20rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 862,
+name: "noise rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/ff713025196d0ecb0ccbbe16aa222fc9/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/metalcore?api-key=zlspn5imm91ak2z7nk3g",
+id: 5023,
+name: "metalcore"
+},
+{
+image: "http://assets.shuffler.fm/tracks/8102ea05b36c38fc6678b5f59859fea0/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/witch%20house?api-key=zlspn5imm91ak2z7nk3g",
+id: 4896,
+name: "witch house"
+},
+{
+image: "http://assets.shuffler.fm/tracks/824f2b9b262ba776c08778b5f26f7e63/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/psychedelic%20rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 869,
+name: "psychedelic rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/de51c85bcf2dcf0708a8663ae801cbf9/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/death%20metal?api-key=zlspn5imm91ak2z7nk3g",
+id: 462,
+name: "death metal"
+},
+{
+image: "http://assets.shuffler.fm/tracks/480432bc1a612813af5a065efa72692a/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/progressive%20metal?api-key=zlspn5imm91ak2z7nk3g",
+id: 4774,
+name: "progressive metal"
+},
+{
+image: "http://assets.shuffler.fm/tracks/2f9974572d52e954dffc3a859b401448/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/australian?api-key=zlspn5imm91ak2z7nk3g",
+id: 1204,
+name: "australian"
+},
+{
+image: "http://assets.shuffler.fm/tracks/2c3ddb3a2d6d371f066af4972165a33b/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/black%20metal?api-key=zlspn5imm91ak2z7nk3g",
+id: 3024,
+name: "black metal"
+},
+{
+image: "http://assets.shuffler.fm/tracks/d8c0c4e91eac316a7d0a6b11bc02c1a2/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/60s?api-key=zlspn5imm91ak2z7nk3g",
+id: 493,
+name: "60s"
+},
+{
+image: "http://assets.shuffler.fm/tracks/53a751de912d24b45345d4f37210e41b/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/emo?api-key=zlspn5imm91ak2z7nk3g",
+id: 943,
+name: "emo"
+},
+{
+image: "http://assets.shuffler.fm/tracks/b0b717d89408dd3452c4ce43fbdf0e3b/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/metal?api-key=zlspn5imm91ak2z7nk3g",
+id: 877,
+name: "metal"
+},
+{
+image: "http://assets.shuffler.fm/tracks/95ceb31d3240617b7266004e809e55d2/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/industrial?api-key=zlspn5imm91ak2z7nk3g",
+id: 2558,
+name: "industrial"
+},
+{
+image: "http://assets.shuffler.fm/tracks/bbf500c2656f2b61a5bebc89897ec4e1/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/glitch?api-key=zlspn5imm91ak2z7nk3g",
+id: 4425,
+name: "glitch"
+},
+{
+image: "http://assets.shuffler.fm/tracks/40b0aef158fc729423152943c9cb6761/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/progressive%20house?api-key=zlspn5imm91ak2z7nk3g",
+id: 1208,
+name: "progressive house"
+},
+{
+image: "http://assets.shuffler.fm/tracks/c2a41336d1d6cb6c7893027fd2d193b7/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/dub?api-key=zlspn5imm91ak2z7nk3g",
+id: 475,
+name: "dub"
+},
+{
+image: "http://assets.shuffler.fm/tracks/8af521e14513b26181454dc7b543da17/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/grunge?api-key=zlspn5imm91ak2z7nk3g",
+id: 739,
+name: "grunge"
+},
+{
+image: "http://assets.shuffler.fm/tracks/16e604eeaafe69aa43176829a3d8aec2/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/soundtrack?api-key=zlspn5imm91ak2z7nk3g",
+id: 234,
+name: "soundtrack"
+},
+{
+image: "http://assets.shuffler.fm/tracks/3a50490f732d7c31b59a519e480f72cc/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/dirty%20south?api-key=zlspn5imm91ak2z7nk3g",
+id: 1415,
+name: "dirty south"
+},
+{
+image: "http://assets.shuffler.fm/tracks/50bb99f7ee458051cfbc4d44e2697993/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/grime?api-key=zlspn5imm91ak2z7nk3g",
+id: 951,
+name: "grime"
+},
+{
+image: "http://assets.shuffler.fm/tracks/4b2d2613bbdc2749613be5cb52bc26d5/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/blues%20rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 903,
+name: "blues rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/54af9d674f5930d534a3e9dd42bf5249/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/japanese?api-key=zlspn5imm91ak2z7nk3g",
+id: 94,
+name: "japanese"
+},
+{
+image: "http://assets.shuffler.fm/tracks/36aa7902a08a4316ff4b25ca92df4fb7/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/spotify?api-key=zlspn5imm91ak2z7nk3g",
+id: 5276,
+name: "spotify"
+},
+{
+image: "http://assets.shuffler.fm/tracks/5643f386cb98cdc5818b07b678660445/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/americana?api-key=zlspn5imm91ak2z7nk3g",
+id: 2247,
+name: "americana"
+},
+{
+image: "http://assets.shuffler.fm/tracks/03408e4ee112056ab537e806b08dc5cf/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/tech%20house?api-key=zlspn5imm91ak2z7nk3g",
+id: 2461,
+name: "tech house"
+},
+{
+image: "http://assets.shuffler.fm/tracks/76aaeaebb558be5f7b8194c8d54f3595/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/noise%20pop?api-key=zlspn5imm91ak2z7nk3g",
+id: 709,
+name: "noise pop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/92872fa96f2bdb80f8b57a909dad05f9/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/glitch-hop?api-key=zlspn5imm91ak2z7nk3g",
+id: 63,
+name: "glitch-hop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/35deec86f974893bd3f9ad4b66d14d2c/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/minimal%20techno?api-key=zlspn5imm91ak2z7nk3g",
+id: 288,
+name: "minimal techno"
+},
+{
+image: "http://assets.shuffler.fm/tracks/c32ade926171d2674b0d5fec247f9282/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/garage?api-key=zlspn5imm91ak2z7nk3g",
+id: 1019,
+name: "garage"
+},
+{
+image: "http://assets.shuffler.fm/tracks/2c3ddb3a2d6d371f066af4972165a33b/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/doom%20metal?api-key=zlspn5imm91ak2z7nk3g",
+id: 2185,
+name: "doom metal"
+},
+{
+image: "http://assets.shuffler.fm/tracks/9b01bfad601658983c01d6559ddd946a/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/nu%20disco?api-key=zlspn5imm91ak2z7nk3g",
+id: 2981,
+name: "nu disco"
+},
+{
+image: "http://assets.shuffler.fm/tracks/1122dad77498f83e0093549b4693d879/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/math%20rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 1382,
+name: "math rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/feba58ad9ce16d90d5f71313e4a8c953/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/indie%20folk?api-key=zlspn5imm91ak2z7nk3g",
+id: 322,
+name: "indie folk"
+},
+{
+image: "http://assets.shuffler.fm/tracks/ed86f731dcf6f6117632d557b855d55c/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/piano?api-key=zlspn5imm91ak2z7nk3g",
+id: 584,
+name: "piano"
+},
+{
+image: "http://assets.shuffler.fm/tracks/d30f7d6eb1bb0d7dea1d82707e1ca7e5/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/breakbeat?api-key=zlspn5imm91ak2z7nk3g",
+id: 267,
+name: "breakbeat"
+},
+{
+image: "http://assets.shuffler.fm/tracks/b773928ce843070537feba484d596468/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/wonky?api-key=zlspn5imm91ak2z7nk3g",
+id: 682,
+name: "wonky"
+},
+{
+image: "http://assets.shuffler.fm/tracks/2eac25ef0a1ab49dc4004db600e134e2/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/chicago?api-key=zlspn5imm91ak2z7nk3g",
+id: 2294,
+name: "chicago"
+},
+{
+image: "http://assets.shuffler.fm/tracks/274cc1ebe3c9a104ec3a9ed51d3af69f/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/stoner%20rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 1710,
+name: "stoner rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/5913194453c918be97012cd377242635/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/icelandic?api-key=zlspn5imm91ak2z7nk3g",
+id: 1117,
+name: "icelandic"
+},
+{
+image: "http://assets.shuffler.fm/tracks/bc8980ee8f9d585692c965234b6f4835/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/ska?api-key=zlspn5imm91ak2z7nk3g",
+id: 2782,
+name: "ska"
+},
+{
+image: "http://assets.shuffler.fm/tracks/3b713c4b2543c4e209e9e915957b1c8c/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/sludge?api-key=zlspn5imm91ak2z7nk3g",
+id: 5797,
+name: "sludge"
+},
+{
+image: "http://assets.shuffler.fm/tracks/d6c48476845e07d2c7dc3420585d8c92/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/neo-soul?api-key=zlspn5imm91ak2z7nk3g",
+id: 2668,
+name: "neo-soul"
+},
+{
+image: "http://assets.shuffler.fm/tracks/9eab9dab89fa53f4b66abd01a7f3b1fe/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/power%20pop?api-key=zlspn5imm91ak2z7nk3g",
+id: 3314,
+name: "power pop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/0cf11336cc95fd72b1a76eec6a2eb23c/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/detroit?api-key=zlspn5imm91ak2z7nk3g",
+id: 2482,
+name: "detroit"
+},
+{
+image: "http://assets.shuffler.fm/tracks/b766cdf38f6b7769172fc837b1b353ce/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/bass?api-key=zlspn5imm91ak2z7nk3g",
+id: 5697,
+name: "bass"
+},
+{
+image: "http://assets.shuffler.fm/tracks/9f9739bb1a1fcfdb181b84195ec767e4/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/screamo?api-key=zlspn5imm91ak2z7nk3g",
+id: 1076,
+name: "screamo"
+},
+{
+image: "http://assets.shuffler.fm/tracks/f54c1ad7b69d4f05e990d263bf3cee5c/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/power%20metal?api-key=zlspn5imm91ak2z7nk3g",
+id: 5074,
+name: "power metal"
+},
+{
+image: "http://assets.shuffler.fm/tracks/0ed2b9eff9cf334ed64f90e3cad1cb68/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/all?api-key=zlspn5imm91ak2z7nk3g",
+id: 22821,
+name: "all"
+},
+{
+image: "http://assets.shuffler.fm/tracks/095b9597423f8b71ed3a1f45511d3c16/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/uk%20funky?api-key=zlspn5imm91ak2z7nk3g",
+id: 14149,
+name: "uk funky"
+},
+{
+image: "http://assets.shuffler.fm/tracks/69f487785d71f329491c6155fcb8e495/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/abstract%20hip-hop?api-key=zlspn5imm91ak2z7nk3g",
+id: 7090,
+name: "abstract hip-hop"
+},
+{
+image: "http://assets.shuffler.fm/tracks/2428a9a26e967f5e7653a07513564507/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/hardcore%20punk?api-key=zlspn5imm91ak2z7nk3g",
+id: 875,
+name: "hardcore punk"
+},
+{
+image: "http://assets.shuffler.fm/tracks/7e52e49094aa5ec0c098113853ff33f9/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/nu%20metal?api-key=zlspn5imm91ak2z7nk3g",
+id: 2614,
+name: "nu metal"
+},
+{
+image: "http://assets.shuffler.fm/tracks/34c3ab7983096992d5db94d083b00818/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/norwegian?api-key=zlspn5imm91ak2z7nk3g",
+id: 1282,
+name: "norwegian"
+},
+{
+image: "http://assets.shuffler.fm/tracks/6d3c4cf2ae7ab8a8418b13525a4ae47f/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/turntablism?api-key=zlspn5imm91ak2z7nk3g",
+id: 6218,
+name: "turntablism"
+},
+{
+image: "http://assets.shuffler.fm/tracks/bbaba7cd8f96cbd229c0a8cf48df983d/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/folk%20rock?api-key=zlspn5imm91ak2z7nk3g",
+id: 1479,
+name: "folk rock"
+},
+{
+image: "http://assets.shuffler.fm/tracks/5e259cc46943efaff653f7f75894cac4/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/bluegrass?api-key=zlspn5imm91ak2z7nk3g",
+id: 86,
+name: "bluegrass"
+},
+{
+image: "http://assets.shuffler.fm/tracks/b02cde9111983c1fdf83d9aed6d4a319/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/gangsta%20rap?api-key=zlspn5imm91ak2z7nk3g",
+id: 13420,
+name: "gangsta rap"
+},
+{
+image: "http://assets.shuffler.fm/tracks/76aaeaebb558be5f7b8194c8d54f3595/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/avant-garde?api-key=zlspn5imm91ak2z7nk3g",
+id: 626,
+name: "avant-garde"
+},
+{
+image: "http://assets.shuffler.fm/tracks/95c1d78a0731689c40fa955f7d9fd557/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/8-bit?api-key=zlspn5imm91ak2z7nk3g",
+id: 1965,
+name: "8-bit"
+},
+{
+image: "http://assets.shuffler.fm/tracks/e6834f72c15ade081577ee9cb97a158b/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/disco%20house?api-key=zlspn5imm91ak2z7nk3g",
+id: 554,
+name: "disco house"
+},
+{
+image: "http://assets.shuffler.fm/tracks/187103b4f46518d4b9672f90f5b964c9/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/twee?api-key=zlspn5imm91ak2z7nk3g",
+id: 1847,
+name: "twee"
+},
+{
+image: "http://assets.shuffler.fm/tracks/afc987fe4ba7f124952338d2e4c3e7b4/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/new%20rave?api-key=zlspn5imm91ak2z7nk3g",
+id: 1581,
+name: "new rave"
+},
+{
+image: "http://assets.shuffler.fm/tracks/35deec86f974893bd3f9ad4b66d14d2c/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/dub%20techno?api-key=zlspn5imm91ak2z7nk3g",
+id: 1594,
+name: "dub techno"
+},
+{
+image: "http://assets.shuffler.fm/tracks/4f3eaa3bb6f5bb709ff571f42a6eb1d5/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/dark%20ambient?api-key=zlspn5imm91ak2z7nk3g",
+id: 4025,
+name: "dark ambient"
+},
+{
+image: "http://assets.shuffler.fm/tracks/93fcc9b3c51c17c94a64236994a1ad18/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/german?api-key=zlspn5imm91ak2z7nk3g",
+id: 2760,
+name: "german"
+},
+{
+image: "http://assets.shuffler.fm/tracks/efe54d3064927128a7f4cf8a531da4f5/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/melodic%20hardcore?api-key=zlspn5imm91ak2z7nk3g",
+id: 3973,
+name: "melodic hardcore"
+},
+{
+image: "http://assets.shuffler.fm/tracks/21a9e4fdf275dd8d33e1d41b29653383/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/space%20disco?api-key=zlspn5imm91ak2z7nk3g",
+id: 3485,
+name: "space disco"
+},
+{
+image: "http://assets.shuffler.fm/tracks/11864d046b87dde259c8f21d5912cbe2/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/brazilian?api-key=zlspn5imm91ak2z7nk3g",
+id: 1074,
+name: "brazilian"
+},
+{
+image: "http://assets.shuffler.fm/tracks/d4d76e487b1520d4745408db9fcae286/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/electroclash?api-key=zlspn5imm91ak2z7nk3g",
+id: 2335,
+name: "electroclash"
+},
+{
+image: "http://assets.shuffler.fm/tracks/05d387c01bacbb4dd24d766075dce0da/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/garage%20punk?api-key=zlspn5imm91ak2z7nk3g",
+id: 837,
+name: "garage punk"
+},
+{
+image: "http://assets.shuffler.fm/tracks/1122dad77498f83e0093549b4693d879/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/irish?api-key=zlspn5imm91ak2z7nk3g",
+id: 1084,
+name: "irish"
+},
+{
+image: "http://assets.shuffler.fm/tracks/1d4d8edb5fbca69fa62794b22213980e/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/classical?api-key=zlspn5imm91ak2z7nk3g",
+id: 1484,
+name: "classical"
+},
+{
+image: "http://assets.shuffler.fm/tracks/f827496fa66608c8f017550c29494240/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/trap?api-key=zlspn5imm91ak2z7nk3g",
+id: 101036,
+name: "trap"
+},
+{
+image: "http://assets.shuffler.fm/tracks/fd1be4dd7e43d5fc958a6a494c8697d7/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/progressive%20trance?api-key=zlspn5imm91ak2z7nk3g",
+id: 2937,
+name: "progressive trance"
+},
+{
+image: "http://assets.shuffler.fm/tracks/3a50490f732d7c31b59a519e480f72cc/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/southern%20rap?api-key=zlspn5imm91ak2z7nk3g",
+id: 13419,
+name: "southern rap"
+},
+{
+image: "http://assets.shuffler.fm/tracks/0aec1ad7f179882494f5e9931f4ca3a8/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/contemporary%20classical?api-key=zlspn5imm91ak2z7nk3g",
+id: 1130,
+name: "contemporary classical"
+},
+{
+image: "http://assets.shuffler.fm/tracks/a32e1e5b66933adc8e6264abc984349c/240x240.jpg",
+channel_url: "http://api.shuffler.fm/v1/channels/liquid%20funk?api-key=zlspn5imm91ak2z7nk3g",
+id: 15206,
+name: "liquid funk"
+}
+]

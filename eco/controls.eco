@@ -1,0 +1,91 @@
+
+<ul class="controls__wrap">
+  <li class="controls__button" > 
+    <label for="control-smooth">Fullscreen</label>
+    <input type="checkbox" id="control-fullscreen">
+  </li>
+  <li class="controls__button" > 
+    <label for="control-smooth">Centered</label>
+    <input type="checkbox" id="control-centered">
+  </li>
+  <li class="controls__button" > 
+    <label for="control-smooth">Smooth</label>
+    <input type="checkbox" id="control-smooth" data-control-switch="smooth">
+  </li>
+  <li class="controls__range">
+    <label for="control-step">Layer</label>
+    <input type="range" data-control-method="gapper" class="" id="control-steps" min='1' max='3' value="1">
+  </li>
+    
+  <li class="controls__section ">
+    <label class="controls__sectitle" for="control-radius">Angle:</label>
+    <div class="controls__button controls--hideswitch" >
+      <label for="control-changeangle">Dynamic Angle</label>
+      <input data-control-switch="changeAngle" type="checkbox" id="control-changeangle">
+    </div>
+    <div class="controls__range controls--hided">
+      <label for="control-angle">Angle Mod Speed</label>
+      <input type="range" data-control-method-value="1" data-control-method="changeAngleSpeed" class="" id="control-anglespeed" min='-100' max='100' value="0">
+    </div>
+    <div class="controls__range controls--tohide">
+      <label for="control-angle">Angle</label>
+      <input type="range" data-control-method-value="1" data-control-method="baseAngle" class="" id="control-angle" min='-1000' max='1000' value="1">
+    </div>
+  </li>
+  <li class="controls__section controls__section--inliner">
+    <label class="controls__sectitle" for="control-radius">Radius:</label>
+    <div class="controls__button controls--hideswitch" >
+      <label for="control-radius-rand">Dynamic Radius</label>
+      <input data-control-switch="changeRadius" type="checkbox" id="control-radius-rand">
+    </div>
+    <div class="controls__range  controls--hided">
+      <label for="control-radius ">Min Amp</label>
+      <input type="range" data-control-method="radiusAmp" data-control-method-value="1" class="" id="control-radius" min='-100' max='100' value="1">
+    </div>
+    <div class="controls__range controls--tohide">
+      <label for="control-radius ">Min</label>
+      <input type="range" data-control-method-value="1" data-control-method="baseRadius" class="" id="control-radius" min='-300' max='100' value="50">
+    </div>
+    <div class="controls__range">
+      <label for="control-amp">Max</label>
+      <input type="range" data-control-method-value="1" data-control-method="ampVal" class="" id="control-amp" min='-30' max='30' value="5">
+    </div>
+  </li>
+
+  
+  <li class="controls__section ">
+    <label class="controls__sectitle" for="control-radius">Color:</label>
+    <div class="controls__button controls--hideswitch" >
+      <label for="control-color-active">Color Path</label>
+      <input data-control-switch="paintAmp" type="checkbox" id="control-color-active">
+    </div>
+    <div class="controls__button controls--hideswitch" >
+      <label for="control-colorbg">Color Background</label>
+      <input data-control-switch="paintBg" type="checkbox" id="control-colorbg">
+    </div>
+    <div class="controls__button controls--hided" >
+      <label for="control-colorbg">Invert</label>
+      <input data-control-switch="colorInvert" type="checkbox" id="control-colorbg">
+    </div>
+    <div class="controls__range controls--hided">
+      <label for="control-hue">Hue</label>
+      <input type="range" data-control-method-value="1" data-control-method="hue" class="" id="control-hue" min='0' max='255' value="42">
+    </div>
+    <div class="controls__range controls--hided">
+      <label for="control-hue">Saturation</label>
+      <input type="range" data-control-method-value="1" data-control-method="colorSat" id="control-hue" min='0' max='255' value="7">
+    </div>
+    <div class="controls__range controls--hided">
+      <label for="control-hue">lightness Amp</label>
+      <input type="range" data-control-method-value="1" data-control-method="colorAmp" id="control-hue" min='0' max='300' value="66">
+    </div>
+    <div class="controls__button controls--hided" >
+      <label for="control-huechanger">Hue Modulation</label>
+      <input data-control-switch="changeHue" type="checkbox" id="control-huechanger">
+    </div>
+  </li>
+
+  
+  <!-- <li class="controls__range"><label for="control-baseoffset">Freq</label><input type="range" data-control-method="baseOffset" class="" id="control-baseoffset" min='0' max='300' value="200"></li> -->
+
+</ul>

@@ -4,31 +4,53 @@
 
   Renderer = (function() {
 
-    Renderer.prototype.OFFSET = 100;
-
-    Renderer.prototype.BARS = 104;
-
-    Renderer.prototype.BARWIDTH = 60;
-
-    Renderer.prototype.BARSOFFSET = 0;
-
-    Renderer.prototype.activeShader = "paper";
-
-    Renderer.prototype.hue = 0;
-
-    Renderer.prototype.theI = 0;
-
-    Renderer.prototype.hueDirection = "up";
+    Renderer.prototype.BARS = 256;
 
     Renderer.prototype.runRenderer = true;
 
-    Renderer.prototype.points = [];
-
     Renderer.prototype.path = null;
+
+    Renderer.prototype.hue = 42;
+
+    Renderer.prototype.colorSat = 7;
+
+    Renderer.prototype.colorAmp = 0.66;
+
+    Renderer.prototype.colorInvert = false;
+
+    Renderer.prototype.paintAmp = false;
+
+    Renderer.prototype.paintBg = false;
 
     Renderer.prototype.changeHue = false;
 
     Renderer.prototype.smooth = true;
+
+    Renderer.prototype.changeRadius = true;
+
+    Renderer.prototype.baseRadius = -32;
+
+    Renderer.prototype.radiusAmp = 1;
+
+    Renderer.prototype.ampVal = 8;
+
+    Renderer.prototype.xOffset = 1.5;
+
+    Renderer.prototype.yOffset = 2;
+
+    Renderer.prototype.baseAngle = 0;
+
+    Renderer.prototype.changeAngle = true;
+
+    Renderer.prototype.changeAngleSpeed = 0.0001618;
+
+    Renderer.prototype.gapper = 1;
+
+    Renderer.prototype.gapperDir = "up";
+
+    Renderer.prototype.radiusDir = 'down';
+
+    Renderer.prototype.hueDirection = "up";
 
     function Renderer() {
       this.freqByteData = new Uint8Array(Sounder.control.analyser.frequencyBinCount);
@@ -38,71 +60,71 @@
 
     }
 
+    Renderer.prototype.initImage = function() {
+      var image;
+      image = 'img_' + Sounder.player.currentTrack;
+      this.raster = new paper.Raster(image);
+      this.raster.position = paper.view.center;
+      this.raster.insertBelow(this.path);
+      return this.maskPath = new paper.Path();
+    };
+
     Renderer.prototype.initPaper = function() {
-      paper.setup($('canvas')[0]);
+      this.GOLDEN = 1.618;
+      this.PI = Math.PI;
+      this.$CANVAS = $('canvas');
+      paper.setup(this.$CANVAS[0]);
       this.bg = new paper.Rectangle(paper.view.bounds);
-      paper.view.fillColor = 'rgb(255,2555,233)';
+      paper.view.fillColor = 'rgb(255,255,233)';
       this.path = new paper.Path();
+      this.path.closed = false;
       this.path.strokeColor = 'black';
       this.path.strokeWidth = 1;
-      console.log('started ', paper, 'engine on ', this.path);
       this.TOTALWIDTH = paper.view.size.width;
       this.TOTALHEIGHT = paper.view.size.height;
-      console.log(this.TOTALWIDTH, this.TOTALHEIGHT);
-      this.POINTSGAP = this.TOTALWIDTH / this.BARS;
-      this.PI = Math.PI;
-      this.GOLDEN = 1.618;
+      this.xPos = this.TOTALWIDTH / this.xOffset;
+      this.yPos = this.TOTALHEIGHT / this.yOffset;
       this.initPoints();
-      console.log("each point is ", this.POINTSGAP, "apart from each other");
       return paper.view.draw();
     };
 
     Renderer.prototype.initPoints = function() {
-      var i, point, w;
-      console.log(this.BARS);
-      i = 0;
-      while (i <= this.BARS) {
-        w = this.TOTALWIDTH - (this.POINTSGAP * i);
-        point = new paper.Point(w, this.TOTALHEIGHT);
-        this.path.add(point);
-        i += 1;
+      var i, point, x, y, _i, _ref, _ref1, _results;
+      this.log = 0;
+      _results = [];
+      for (i = _i = 0, _ref = this.BARS, _ref1 = this.gapper; 0 <= _ref ? _i < _ref : _i > _ref; i = _i += _ref1) {
+        x = Math.floor(Math.cos(this.baseAngle * i) * this.baseRadius);
+        y = Math.floor(Math.sin(this.baseAngle * i) * this.baseRadius);
+        point = new paper.Point(this.xPos + x, this.yPos + y);
+        _results.push(this.path.add(point));
       }
-      return console.log(this.path.segments[0].point.x, this.path.segments[this.path.segments.length - 1].point.x);
+      return _results;
     };
 
     Renderer.prototype.updatePos = function() {
-      var i, oldHeight, w, _i, _ref, _results;
+      var oldHeight;
       oldHeight = this.TOTALHEIGHT;
       this.TOTALWIDTH = paper.view.size.width;
       this.TOTALHEIGHT = paper.view.size.height;
-      this.POINTSGAP = this.TOTALWIDTH / this.BARS;
-      _results = [];
-      for (i = _i = 0, _ref = this.BARS; _i < _ref; i = _i += 1) {
-        w = this.TOTALWIDTH - (this.POINTSGAP * i);
-        this.path.segments[i].point.x = w;
-        if (this.path.segments[i].point.y === oldHeight) {
-          _results.push(this.path.segments[i].point.y = this.TOTALHEIGHT);
-        } else {
-          _results.push(void 0);
-        }
-      }
-      return _results;
+      this.xPos = this.TOTALWIDTH / this.xOffset;
+      return this.yPos = this.TOTALHEIGHT / this.yOffset;
     };
 
     Renderer.prototype.initEvents = function() {
       var debouncedresize,
         _this = this;
-      $(this).on('drawPoints', function() {});
       $(this).on('pause', function() {
         return _this.runRenderer = false;
       });
       $(this).on('start', function() {
-        _this.runRenderer = true;
-        return _this.render();
-      });
-      $(this).on('changeShader', function(e, shader) {
-        $('body').attr('style', '');
-        return _this.activeShader = shader;
+        _this.runRenderer = false;
+        _.delay((function() {
+          _this.runRenderer = true;
+          return _this.render();
+        }), 100);
+        if (Sounder.renderer.changeHue) {
+          return _this.hueChanger();
+        }
       });
       debouncedresize = _.debounce((function() {
         return _this.updatePos();
@@ -112,41 +134,80 @@
       });
     };
 
-    Renderer.prototype.shader = function(value) {
-      var i, magnitude, _i, _ref,
-        _this = this;
-      for (i = _i = 1, _ref = this.path.segments.length - 2; _i <= _ref; i = _i += 1) {
-        magnitude = value[Math.round(i * (this.PI * 0.9))] * this.GOLDEN;
-        this.path.segments[(this.path.segments.length - 1) - i].point.y = this.TOTALHEIGHT - magnitude;
+    Renderer.prototype.signalEffects = function(signal) {
+      var p;
+      if (this.paintAmp) {
+        p = signal * this.colorAmp;
+        if (this.colorInvert) {
+          p = 100 - p;
+        }
+        this.path.strokeColor = "hsl(" + this.hue + "," + this.colorSat + "%, " + p + "%)";
       }
-      this.bg.fillColor = "hsla(" + (255 - (value[this.OFFSET] % 255)) + ",30%,80%, 0.1)";
-      this.path.strokeColor = "hsla(" + (255 - (value[this.OFFSET] % 255)) + ",20%,60%, 0.2)";
+      if (this.changeAngle) {
+        this.baseAngle += this.changeAngleSpeed;
+      }
+      if (this.paintBg) {
+        p = signal * this.colorAmp;
+        if (!this.colorInvert) {
+          p = 100 - p;
+        }
+        document.documentElement.style.backgroundColor = "hsl(" + this.hue + ",25%, " + p + "%)";
+      }
+      if (this.changeRadius) {
+        return this.baseRadius = signal * this.radiusAmp;
+      }
+    };
+
+    Renderer.prototype.shader = function(value) {
+      var dot, i, magnitude, p, x, y, _i, _ref, _ref1;
+      if (true === this.changeRadius || true === this.changeAngle || true === this.paintAmp || true === this.paintBg) {
+        p = _.reduce(value, function(memo, num) {
+          return memo + num;
+        });
+        p = Math.round(((p / 1024) / 255) * 100);
+        this.signalEffects(p);
+      }
+      for (i = _i = 0, _ref = this.BARS, _ref1 = this.gapper; 0 <= _ref ? _i < _ref : _i > _ref; i = _i += _ref1) {
+        magnitude = value[i] * (this.GOLDEN * (this.ampVal / 10));
+        x = Math.floor(Math.cos(this.baseAngle * i) * (this.baseRadius + magnitude) + this.xPos);
+        y = Math.floor(Math.sin(this.baseAngle * i) * (this.baseRadius + magnitude) + this.yPos);
+        dot = this.path.segments[(this.path.segments.length - 1) - i];
+        dot.point.x = x;
+        dot.point.y = y;
+      }
       if (this.smooth) {
         this.path.smooth();
       }
-      paper.view.draw();
-      return $("body").css("background-color", function() {
-        return "hsla(" + (value[_this.OFFSET] % 255) + ",10%,90%, 1)";
-      });
+      return paper.view.draw();
     };
 
-    Renderer.prototype.hueChanger = function(looping) {
-      if (looping == null) {
-        looping = true;
+    Renderer.prototype.hueChanger = function() {
+      var _ref,
+        _this = this;
+      if ((_ref = this.changer) == null) {
+        this.changer = _.throttle((function() {
+          if (!!Sounder.renderer.changeHue) {
+            console.log('hue');
+            if (Sounder.renderer.hueDirection === "up") {
+              Sounder.renderer.hue = Sounder.renderer.hue + 1;
+            } else if (Sounder.renderer.hueDirection === "down") {
+              Sounder.renderer.hue = Sounder.renderer.hue - 1;
+            }
+            if (Sounder.renderer.hue > 250) {
+              Sounder.renderer.hueDirection = "down";
+            } else if (Sounder.renderer.hue < 10) {
+              Sounder.renderer.hueDirection = "up";
+            }
+            if (_this.radiusDir === 'up') {
+              _this.radiusDir = 'down';
+            } else if (_this.radiusDir === 'down') {
+              _this.radiusDir = 'up';
+            }
+            return _this.changer();
+          }
+        }), 1000);
       }
-      if (Sounder.renderer.changeHue) {
-        window.webkitRequestAnimationFrame(Sounder.renderer.hueChanger);
-        if (Sounder.renderer.hueDirection === "up") {
-          Sounder.renderer.hue = Sounder.renderer.hue + 1;
-        } else if (Sounder.renderer.hueDirection === "down") {
-          Sounder.renderer.hue = Sounder.renderer.hue - 1;
-        }
-        if (Sounder.renderer.hue > 250) {
-          return Sounder.renderer.hueDirection = "down";
-        } else if (Sounder.renderer.hue < 10) {
-          return Sounder.renderer.hueDirection = "up";
-        }
-      }
+      return this.changer();
     };
 
     Renderer.prototype.render = function() {

@@ -1,9 +1,40 @@
+// icons
+// 
+@font-face {
+  font-family: 'harmogram-icons';
+  src:url('fonts/icomoon.eot');
+  src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.woff') format('woff'),
+    url('fonts/icomoon.ttf') format('truetype'),
+    url('fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon] {
+  font-size: 0;
+  text-decoration: none;
+  &:before {
+    font-family: 'harmogram-icons';
+    content: attr(data-icon);
+    font-size: 1.4rem;
+    speak: none;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+// @include 'compass';
+
+
 $black :#222;
 $white:#fff;
 $lightgray:darken($white, 10%);
 
 $testcolor:#f24021;
-
+@mixin trunk { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
   @mixin keyframes ($name) {
     @-webkit-keyframes $name { @content }
        @-moz-keyframes $name { @content }
@@ -25,11 +56,22 @@ $testcolor:#f24021;
 }
 
 
+@-webkit-keyframes spin {
+  0%   { -webkit-transform:rotate3d(0,0,1,0deg); }
+  100% {
+   -webkit-transform:rotate3d(0,0,1,720deg);
+   }
+}
 
+// @import "_logo";
 @import "_fonts";
 @import "_header";
-@import "_about";
+// @import "_about";
 @import "_roll";
+@import "_channels";
+@import "_trackinput";
+@import "_controls";
+
 *,*:before, *:after {
   box-sizing:border-box;
 }
@@ -37,13 +79,21 @@ $testcolor:#f24021;
   position:relative;
   margin:0;
   padding:0;
-  -webkit-font-smoothing:antialiased;
+  // -webkit-font-smoothing:antialiased;
 }
 
 
 
 %display_font {
-  font-family:"jaf-facitweb", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+   // font-family: "tierra-nueva-norte";
+   // font-family: "jubilat";
+   //  font-family: "ff-ernestine-web-pro";
+   //   font-family: "abril-text";
+   //     font-family: "chaparral-pro";
+   //      font-family: "jaf-lapture";
+   //       font-family: "minion-pro";
+
 }
 // moree
 
@@ -92,6 +142,20 @@ a {
   color:inherit;
 }
 
+blockquote {
+  border-left: 1px solid rgba(hsl(42, 25%, 90%), 0.9);
+  padding: 1rem 2rem 1rem;
+  font-style: italic;
+  cite {
+    font-style: normal;
+    opacity: 0.8;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+    // float: right;
+  }
+  margin: 0 0 2rem;
+}
 
 .container {
     width:100%;
@@ -222,44 +286,85 @@ h2 {
   }
 
 
-
-  .track__wrap {
-    position: absolute;
-    top:0;
-    padding:5%;
+  canvas {
+    position: fixed;
     left: 0;
-    width:100%;
-    z-index: 999999
+    top:0;
+    // width: 60%;
+    // height: ;
+    // padding-bottom: 60%;
+    // width:50%;
+    right:0;
+    bottom:0;
+    z-index: -1;
+    -webkit-transform:translate3d(0,0,0) rotate3d(0,0,1,0deg);
+    -webkit-backface-visibility:hidden;
+    -webkit-perspective:1000;
+    // background-image: -webkit-radial-gradient(black, white);
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    // @include background(linear-gradient(black, white));
   }
 
-  .track__model {
-    display: inline-block;
-    width:10rem;
-    height: 10rem;
-  }
-  .track__image {
-    background-color: white;
-    overflow: hidden;
-    border-radius: 100%;
-    width:50%;
-    height:0;
-    padding-bottom: 50%;
-    background-size: cover;
+  .canvas_spin {
+  -webkit-animation: spin 120s infinite;
+  -webkit-animation-timing-function:linear;
   }
 
-@include respond(until, '800px') {
-  .isle:last-child {margin-bottom:10%;}
-  footer {position:absolute!important;
+.not_chrome {
+  overflow: hidden;
+}
+.no_chrome_msg {
+  h1 {
+      font-family: "jubilat", serif;
+      font-size: 3rem;
+      font-weight: bold;
+      padding-bottom: 13rem;
+      color: rgba(black, 0.5);
 
-    bottom:0;}
-  .roll {
-    // width:100%;
-    // left:10%;
-    float:none;
-    top:5%;
-    width:80%;
-    left:10%;
+  }
+  h2 {
+    line-height: 1.6;
+    font-weight: bold;
+    font-size: 4rem;
+    // color:rgba(black, 0.2);
+    // line-height: 1;
+    // float: left;
+    // position: absolute;
+  }
+  h3 {
+    line-height: 1.4;
+  }
+  .no_chrome_logo {
+    position: fixed;
+    width: 50rem;
+    line-height: 40rem;
+    z-index: -2;
+    text-align: center;
+    color: rgba(darken(#F0EDE6, 20%), 0.3);
+    height: 50rem;
+    // background-color: red;
+    right: 50%;
+    bottom: 50%;
+    margin-right: -25rem;
+    margin-bottom: -25rem;
+    &:before {
+      font-size: 42rem;
+      line-height: 50rem;
+    }
+  }
+  text-align: left;
+  display: none;
+  .not_chrome & {
+    display: block;
+    position: absolute;
+    padding:5% 10%;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: #F0EDE6;
+    z-index: 9999999;
   }
 }
-
 

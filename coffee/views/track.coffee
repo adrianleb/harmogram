@@ -4,8 +4,9 @@ class Sounder.Views.Track extends Backbone.View
 
   className: 'track__model'
 
-  # events:
-  #   'click el': 'play'
+  events:
+    'click ': 'play'
+
 
   initialize: (model) ->
     # console.log i
@@ -14,17 +15,21 @@ class Sounder.Views.Track extends Backbone.View
     @render()
 
 
-
   render: ->
     @$el.html(@template(model:@model))
-    @$el.on 'click', (e) =>
-      @play(e)
     
+
+    # here we set the event listener for the track ending, on the audio element of this view
+    @$('audio').on 'ended', (e) =>
+      Sounder.player.currentTrack += 1
+      Sounder.player.playCurrent()
     @
 
 
   play: (e) ->
     e.preventDefault()
-    console.log 'heeeeeey', @$('audio').data 'track-index',  @$('audio')
+    homer.$('.active').removeClass 'active'
+    $(e.currentTarget).addClass 'active'
+    # console.log 'heeeeeey', @$('audio'),  @$('audio')
+    $(Sounder.player).trigger 'playAudio', @$('audio')
 
-    $(Sounder.player).trigger 'playIndex', @$('audio').data 'track-index'

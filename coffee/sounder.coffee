@@ -6,16 +6,12 @@ class SounderControl
     @context = new window.webkitAudioContext()
     @analyser = @context.createAnalyser()
     @_plug @analyser, @context.destination
-    console.log 'welcome to ', @context, @analyser
-    @getTracks()
-
 
   constructor: ->
     @loaded = false
     @source = undefined
     @audio = undefined
 
-    # Sounder.player = new Player()
 
     @init()
 
@@ -36,18 +32,12 @@ class SounderControl
     source = @context.createMediaElementSource(el)
     source.connect @analyser
     $(Sounder.player).trigger 'newAudio', el
-    # @audioSources.push source
 
 
   _plug: (input, output) ->
     input.connect output
 
-  getTracks: ->
-    # console.log Meteor
-    # console.log @tracks
-    @
-
 
 (->
-  Sounder.control = new SounderControl
+    Sounder.control = new SounderControl
 )()

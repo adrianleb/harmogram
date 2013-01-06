@@ -12,9 +12,10 @@ class Player
 
   initEvents: (el) ->
     $(@).on 'newAudio', (e, el) =>
-      console.log 'new source', el
       @audioPlayers.push el
-      @renderPlaylist()
+      # $(el).on 'ended', 'audio', (e) =>
+      #   @currentTrack += 1
+      #   @playCurrent()
 
     $(@).on 'playLast', (e) => @playLast()
 
@@ -25,18 +26,13 @@ class Player
         @currentTrack = index
         @playCurrent()
 
-
-  renderPlaylist: ->
-    $('#playlist').html ''
-    for player in @audioPlayers
-      do (player) =>
-        # index = @audioPlayers.indexOf player
-        # console.log index ,$(player).data 'index'
-        # $(player).data 'index', "#{index}"
-        # console.log 'toucher', player
-        # tmpl = "<a class='play' data-index='#{index}' href='#'>track-#{index}</a>"
-        # $('#playlist').append tmpl
-
+    $(@).on 'playAudio', (e, audio) => 
+      i = @audioPlayers.indexOf audio
+      if @currentTrack is i and @isPlaying
+        @pauseCurrent()
+      else
+        @currentTrack = i
+        @playCurrent()
 
   pauseCurrent: ->
     current = _.filter @audioPlayers, (a) ->
@@ -61,20 +57,22 @@ class Player
     @isPlaying = true
 
 
+  emptyPlayer: ->
+      @audioPlayers = []
+      @currentTrack = 0
 
   playCurrent: () ->
     if @isPlaying
       @pauseCurrent()
-    i = @audioPlayers.indexOf @currentTrack
-    # current = @audioPlayers[@currentTrack]
-    current = @audioPlayers[i]
+    current = @audioPlayers[@currentTrack]
     current.play()
-
+    homer.$('.active').removeClass 'active'
+    homer.scrollCurrent()
+    $(current).parent().addClass 'active'
     $(Sounder.renderer).trigger 'start'
     @isPlaying = true
 
 
-
 (->
-  Sounder.player = new Player
+    Sounder.player = new Player
 )()

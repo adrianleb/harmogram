@@ -8,9 +8,7 @@
       this.initEvents();
       this.context = new window.webkitAudioContext();
       this.analyser = this.context.createAnalyser();
-      this._plug(this.analyser, this.context.destination);
-      console.log('welcome to ', this.context, this.analyser);
-      return this.getTracks();
+      return this._plug(this.analyser, this.context.destination);
     };
 
     function SounderControl() {
@@ -53,10 +51,6 @@
 
     SounderControl.prototype._plug = function(input, output) {
       return input.connect(output);
-    };
-
-    SounderControl.prototype.getTracks = function() {
-      return this;
     };
 
     return SounderControl;

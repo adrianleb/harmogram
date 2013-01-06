@@ -1,3 +1,8 @@
-  <div class="track__image" style="background-image:url(<%= @model.get('images')?.medium?.url%>)">
+  <div class="track__image" style="background-image:url(<%= @model.get('object').images?.medium?.url%>)">
+    <img id="img_<%= @model.trackIndex %>"src="<%= @model.get('object').images?.medium?.url%>" alt="">
   </div>
-  <audio id="source<%= @model.cid %>" data-track-index="<%= @model.trackIndex %>" src="<%= @model.get('object').stream.url %><%= '?client_id=YOUR_CLIENT_ID' if @model.get('object').stream.platform is 'soundcloud' %>" ></audio>
+  <div class="track__info">
+    <h1 class="track__artist"><%= @model.get('object').metadata.artist.name %></h1>
+    <h2 class="track__title"><%= @model.get('object').metadata.title %></h2>
+  </div>
+  <audio id="source<%= @model.trackIndex %>" preload='none' data-track-index="<%= @model.trackIndex %>" src="<%= @model.get('object').stream.url %><%=  if @model.get('object').stream.platform is 'soundcloud' then '?client_id=c280d0c248513cfc78d7ee05b52bf15e' else '?api-key=zlspn5imm91ak2z7nk3g' %>" ></audio>

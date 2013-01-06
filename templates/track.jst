@@ -37,17 +37,33 @@ function(__obj) {
   }
   (function() {
     (function() {
-      var _ref, _ref1;
+      var _ref, _ref1, _ref2, _ref3;
     
       __out.push('  <div class="track__image" style="background-image:url(');
     
-      __out.push(__sanitize((_ref = this.model.get('images')) != null ? (_ref1 = _ref.medium) != null ? _ref1.url : void 0 : void 0));
+      __out.push(__sanitize((_ref = this.model.get('object').images) != null ? (_ref1 = _ref.medium) != null ? _ref1.url : void 0 : void 0));
     
-      __out.push(')">\n  </div>\n  <audio id="source');
+      __out.push(')">\n    <img id="img_');
     
-      __out.push(__sanitize(this.model.cid));
+      __out.push(__sanitize(this.model.trackIndex));
     
-      __out.push('" data-track-index="');
+      __out.push('"src="');
+    
+      __out.push(__sanitize((_ref2 = this.model.get('object').images) != null ? (_ref3 = _ref2.medium) != null ? _ref3.url : void 0 : void 0));
+    
+      __out.push('" alt="">\n  </div>\n  <div class="track__info">\n    <h1 class="track__artist">');
+    
+      __out.push(__sanitize(this.model.get('object').metadata.artist.name));
+    
+      __out.push('</h1>\n    <h2 class="track__title">');
+    
+      __out.push(__sanitize(this.model.get('object').metadata.title));
+    
+      __out.push('</h2>\n  </div>\n  <audio id="source');
+    
+      __out.push(__sanitize(this.model.trackIndex));
+    
+      __out.push('" preload=\'none\' data-track-index="');
     
       __out.push(__sanitize(this.model.trackIndex));
     
@@ -55,9 +71,7 @@ function(__obj) {
     
       __out.push(__sanitize(this.model.get('object').stream.url));
     
-      if (this.model.get('object').stream.platform === 'soundcloud') {
-        __out.push(__sanitize('?client_id=YOUR_CLIENT_ID'));
-      }
+      __out.push(__sanitize(this.model.get('object').stream.platform === 'soundcloud' ? '?client_id=c280d0c248513cfc78d7ee05b52bf15e' : '?api-key=zlspn5imm91ak2z7nk3g'));
     
       __out.push('" ></audio>\n');
     
