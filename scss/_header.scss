@@ -107,12 +107,29 @@
 }
 .header__aboutcredit {
   // text-align: right;
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
   // width: 38rem!important;
   text-align: right!important;
 
 }
 
+
+.header__social {
+  border-top: #eae6dc solid 1px;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  .fb-like, .g-plus, .twitter-share-button {
+    display: inline-block!important;
+    vertical-align: top;
+  }
+  .twitter-share-button {
+    margin-right:1rem!important;
+  }
+  .fb-like {
+    margin-top: -0.2rem;
+    margin-left: 2.5rem;
+  }
+}
 
 
 .menu {
@@ -206,7 +223,7 @@
 
   .open--about {
   .header {
-    padding-bottom:40rem;
+    padding-bottom:42rem;
     background-color: rgba(white, 1);
   }
     .header__logo {
