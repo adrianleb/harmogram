@@ -15,11 +15,25 @@
 
     Main.prototype.routes = {
       '': 'home',
-      ':key': 'home'
+      ':key': 'homeWithChannel',
+      ':key/:id': 'homeWithTrack'
     };
 
     Main.prototype.home = function(key) {
       return this.view = new Sounder.Views.Home(key);
+    };
+
+    Main.prototype.homeWithChannel = function(key) {
+      return this.view = new Sounder.Views.Home({
+        key: key
+      });
+    };
+
+    Main.prototype.homeWithTrack = function(key, id) {
+      return this.view = new Sounder.Views.Home({
+        key: key,
+        id: id
+      });
     };
 
     return Main;

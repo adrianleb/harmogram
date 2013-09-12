@@ -33,6 +33,7 @@
     };
 
     Channel.prototype.changeChannel = function(e) {
+      this.parent.trackId = null;
       this.parent.currentChannel = this.model.get('name');
       return this.parent.changeChannel(this.model.get('channel_url'));
     };

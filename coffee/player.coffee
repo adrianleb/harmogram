@@ -1,6 +1,7 @@
 class Player
 
-  constructor: ->
+  constructor: (parent) ->
+    @parent = parent
     @audioPlayers = []
     @currentPlaying = null
     @isPlaying = false
@@ -71,6 +72,8 @@ class Player
     $(current).parent().addClass 'active'
     $(Sounder.renderer).trigger 'start'
     @isPlaying = true
+    url = "#{Sounder.currentChannel}/#{$(current).attr "data-track-id"}"
+    Backbone.history.navigate(url, {trigger:false})
 
 
 (->

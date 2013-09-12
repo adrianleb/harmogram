@@ -3,6 +3,9 @@
   var SounderControl;
 
   SounderControl = (function() {
+    var currentGenre;
+
+    currentGenre = null;
 
     SounderControl.prototype.init = function() {
       this.initEvents();

@@ -22,12 +22,14 @@
       'click #about-trigger': 'showAbout'
     };
 
-    Home.prototype.initialize = function(key) {
+    Home.prototype.initialize = function(arg) {
       this.tracks = new Sounder.Collections.Tracks();
       this.channels = new Sounder.Collections.Channels();
       this.controls = new Sounder.Views.Controls({
         parent: this
       });
+      this.channel = arg != null ? arg.key : void 0;
+      this.trackId = arg != null ? arg.id : void 0;
       this.tracksVisible = true;
       this.channelsVisible = false;
       this.controlsVisible = false;
@@ -209,7 +211,7 @@
     };
 
     Home.prototype.renderChannels = function() {
-      var c, pick, v, _i, _len, _ref,
+      var c, pick, v, _i, _j, _len, _len1, _ref, _ref1,
         _this = this;
       $('#channel-list').empty();
       this.channelViews = [];
@@ -223,7 +225,17 @@
         $('#channel-list').append(v.$el);
         this.channelViews.push(v);
       }
-      pick = this.channelViews[Math.round(Math.random() * this.channelViews.length) - 1].el;
+      if (this.channel != null) {
+        _ref1 = this.channelViews;
+        for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+          c = _ref1[_j];
+          if (c.model.get('name').replace(" ", "_") === this.channel) {
+            pick = c.el;
+          }
+        }
+      } else {
+        pick = this.channelViews[Math.round(Math.random() * this.channelViews.length) - 1].el;
+      }
       $(pick).addClass('active');
       return _.delay((function() {
         return _this.$el.animate({
@@ -241,6 +253,12 @@
       this.tracks.url = url;
       this.fetchTracks();
       this.$('#channel-current').html(this.currentChannel);
+      Sounder.currentChannel = this.currentChannel.replace(' ', "_");
+      if (this.trackId == null) {
+        Backbone.history.navigate(Sounder.currentChannel, {
+          trigger: false
+        });
+      }
       return this.goTracks();
     };
 
@@ -260,8 +278,14 @@
         i++;
       }
       return _.delay((function() {
+        var pick;
         Sounder.control.plugMany();
-        return $(Sounder.player).trigger('playAudio', $('audio')[Math.round(Math.random() * $('audio').length) - 1]);
+        if (_this.trackId != null) {
+          pick = $("audio[data-track-id=" + _this.trackId + "]");
+          return $(Sounder.player).trigger('playAudio', pick);
+        } else {
+          return $(Sounder.player).trigger('playAudio', $('audio')[Math.round(Math.random() * $('audio').length) - 1]);
+        }
       }), 10);
     };
 

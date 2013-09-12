@@ -1,6 +1,6 @@
 class SounderControl
 
-
+  currentGenre = null
   init: ->
     @initEvents()
     @context = new window.webkitAudioContext()

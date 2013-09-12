@@ -14,10 +14,13 @@ class Sounder.Views.Home extends Backbone.View
     'click #about-trigger' : 'showAbout'
     # 'click #track-submit' : 'inputNewTrack'
 
-  initialize: (key) ->
+  initialize: (arg) ->
     @tracks = new Sounder.Collections.Tracks()
     @channels = new Sounder.Collections.Channels()
     @controls = new Sounder.Views.Controls(parent:@)
+
+    @channel = arg?.key
+    @trackId = arg?.id
 
     # @initControlsPanel()
     @tracksVisible = true
@@ -176,8 +179,13 @@ class Sounder.Views.Home extends Backbone.View
       @channelViews.push v
 
 
-    # ugly hacky way to pick a channel, way, jump to track
-    pick = @channelViews[Math.round(Math.random() * @channelViews.length) - 1].el
+    if @channel?
+      for c in @channelViews
+        if c.model.get('name').replace(" ", "_") is @channel
+          pick = c.el
+    else
+      # ugly hacky way to pick a channel, way, jump to track
+      pick = @channelViews[Math.round(Math.random() * @channelViews.length) - 1].el
     $(pick).addClass 'active'
     _.delay ( =>
       @$el.animate {scrollTop: (pick.offsetTop - (Sounder.renderer.TOTALHEIGHT/2.4))}, 500, () =>
@@ -191,6 +199,9 @@ class Sounder.Views.Home extends Backbone.View
     @tracks.url = url
     @fetchTracks()
     @$('#channel-current').html @currentChannel
+    Sounder.currentChannel = @currentChannel.replace(' ', "_")
+    unless @trackId?
+      Backbone.history.navigate(Sounder.currentChannel, {trigger: false})
     @goTracks()
 
 
@@ -208,19 +219,14 @@ class Sounder.Views.Home extends Backbone.View
 
     # making sure the browser finishes what hes doing before he starts doings this...
     _.delay (=>
+
       Sounder.control.plugMany()
-      $(Sounder.player).trigger 'playAudio', $('audio')[Math.round( Math.random() * $('audio').length) - 1]
+      if @trackId?
+        pick = $("audio[data-track-id=#{@trackId}]")
+        $(Sounder.player).trigger 'playAudio', pick
+      else
+        $(Sounder.player).trigger 'playAudio', $('audio')[Math.round( Math.random() * $('audio').length) - 1]
     ), 10
-
-  # inputNewTrack: (e) ->
-  #   e.preventDefault()
-  #   src = @$('#track-url').val()
-  #   i = @$('audio').length
-  #   vi = new Sounder.Views.CustomTrack(track:src, index:i)
-  #   @$('#track-list').append vi.$el
-  #   @goTracks()
-  #   Sounder.player.currentTrack = i
-
 
 
   scrollCurrent: () ->

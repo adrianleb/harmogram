@@ -4,7 +4,8 @@
 
   Player = (function() {
 
-    function Player() {
+    function Player(parent) {
+      this.parent = parent;
       this.audioPlayers = [];
       this.currentPlaying = null;
       this.isPlaying = false;
@@ -75,7 +76,7 @@
     };
 
     Player.prototype.playCurrent = function() {
-      var current;
+      var current, url;
       if (this.isPlaying) {
         this.pauseCurrent();
       }
@@ -85,7 +86,11 @@
       homer.scrollCurrent();
       $(current).parent().addClass('active');
       $(Sounder.renderer).trigger('start');
-      return this.isPlaying = true;
+      this.isPlaying = true;
+      url = "" + Sounder.currentChannel + "/" + ($(current).attr("data-track-id"));
+      return Backbone.history.navigate(url, {
+        trigger: false
+      });
     };
 
     return Player;

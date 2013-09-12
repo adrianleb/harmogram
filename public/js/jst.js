@@ -429,7 +429,11 @@ JST['track'] = function(__obj) {
     
       __out.push(__sanitize(this.model.trackIndex));
     
-      __out.push('" preload=\'none\' data-track-index="');
+      __out.push('" preload=\'none\' data-track-id="');
+    
+      __out.push(__sanitize(this.model.get('id')));
+    
+      __out.push('" data-track-index="');
     
       __out.push(__sanitize(this.model.trackIndex));
     
