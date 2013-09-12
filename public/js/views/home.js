@@ -282,7 +282,11 @@
         Sounder.control.plugMany();
         if (_this.trackId != null) {
           pick = $("audio[data-track-id=" + _this.trackId + "]");
-          return $(Sounder.player).trigger('playAudio', pick);
+          if (pick != null) {
+            return $(Sounder.player).trigger('playAudio', pick);
+          } else {
+            return _this.fetchMoreTracks();
+          }
         } else {
           return $(Sounder.player).trigger('playAudio', $('audio')[Math.round(Math.random() * $('audio').length) - 1]);
         }

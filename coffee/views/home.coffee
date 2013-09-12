@@ -56,6 +56,20 @@ class Sounder.Views.Home extends Backbone.View
             @render()
             @renderTracks()
 
+
+  # fetchTracks: ->
+  #   console.log 'go'
+  #     # @tracks.fetch 
+  #     #       dataType:'jsonp'
+  #     #       success: =>
+  #     #         tracks = _.filter @tracks.models, (t) =>
+  #     #           t.attributes.object.stream.platform is 'soundcloud'
+  #     #         @tracks.models = []
+  #     #         @tracks.models = tracks
+  #     #         @render()
+  #     #         @renderTracks()
+
+
   handleHoverOut: (e) ->
     if e.type is 'mouseleave' and @tracksVisible
       @scrollCurrent()
@@ -223,7 +237,10 @@ class Sounder.Views.Home extends Backbone.View
       Sounder.control.plugMany()
       if @trackId?
         pick = $("audio[data-track-id=#{@trackId}]")
-        $(Sounder.player).trigger 'playAudio', pick
+        if pick?
+          $(Sounder.player).trigger 'playAudio', pick
+        else
+          @fetchMoreTracks()
       else
         $(Sounder.player).trigger 'playAudio', $('audio')[Math.round( Math.random() * $('audio').length) - 1]
     ), 10

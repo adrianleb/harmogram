@@ -21,6 +21,5 @@ class Sounder.Views.Channel extends Backbone.View
 
 
   changeChannel: (e)->
-    @parent.trackId = null
     @parent.currentChannel = @model.get('name')
     @parent.changeChannel @model.get('channel_url')
