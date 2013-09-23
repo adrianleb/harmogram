@@ -89,13 +89,15 @@
     };
 
     Renderer.prototype.initPoints = function() {
-      var i, point, x, y, _i, _ref, _ref1, _results;
+      var distance, i, point, x, y, _i, _ref, _ref1, _results;
       this.log = 0;
+      distance = this.TOTALWIDTH / this.BARS;
+      console.log(distance);
       _results = [];
       for (i = _i = 0, _ref = this.BARS, _ref1 = this.gapper; 0 <= _ref ? _i < _ref : _i > _ref; i = _i += _ref1) {
         x = Math.floor(Math.cos(this.baseAngle * i) * this.baseRadius);
         y = Math.floor(Math.sin(this.baseAngle * i) * this.baseRadius);
-        point = new paper.Point(this.xPos + x, this.yPos + y);
+        point = new paper.Point(i * distance, Math.floor(this.TOTALHEIGHT));
         _results.push(this.path.add(point));
       }
       return _results;
@@ -159,7 +161,7 @@
     };
 
     Renderer.prototype.shader = function(value) {
-      var dot, i, magnitude, p, x, y, _i, _ref, _ref1;
+      var i, magnitude, p, _i, _ref;
       if (true === this.changeRadius || true === this.changeAngle || true === this.paintAmp || true === this.paintBg) {
         p = _.reduce(value, function(memo, num) {
           return memo + num;
@@ -167,14 +169,13 @@
         p = Math.round(((p / 1024) / 255) * 100);
         this.signalEffects(p);
       }
-      for (i = _i = 0, _ref = this.BARS, _ref1 = this.gapper; 0 <= _ref ? _i < _ref : _i > _ref; i = _i += _ref1) {
-        magnitude = value[i] * (this.GOLDEN * (this.ampVal / 10));
-        x = Math.floor(Math.cos(this.baseAngle * i) * (this.baseRadius + magnitude) + this.xPos);
-        y = Math.floor(Math.sin(this.baseAngle * i) * (this.baseRadius + magnitude) + this.yPos);
-        dot = this.path.segments[(this.path.segments.length - 1) - i];
-        dot.point.x = x;
-        dot.point.y = y;
+      for (i = _i = 1, _ref = this.path.segments.length - 2; _i <= _ref; i = _i += 1) {
+        if (!(i === 0 || 0 === (this.BARS - 3))) {
+          magnitude = value[Math.round(i * (this.PI * 0.9))] * this.GOLDEN;
+          this.path.segments[(this.path.segments.length - 1) - i].point.y = this.TOTALHEIGHT - magnitude;
+        }
       }
+      this.path.fillColor = "hsla(" + (255 - (value[this.baseOffset] % 255)) + ",30%,80%, 0.1)";
       if (this.smooth) {
         this.path.smooth();
       }

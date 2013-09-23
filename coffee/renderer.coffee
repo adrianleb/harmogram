@@ -85,14 +85,15 @@ class Renderer
     @log = 0
     # console.log @BARS, @TOTALWIDTH /2 , @TOTALHEIGHT /2
 
-
+    distance = @TOTALWIDTH / @BARS
+    console.log distance
     for i in [0...@BARS] by @gapper
       x = Math.floor(Math.cos(@baseAngle * i) * @baseRadius)
       y = Math.floor(Math.sin(@baseAngle * i) * @baseRadius)
       # console.log x, y
       # w = @TOTALWIDTH - (@POINTSGAP * i)
-      point = new paper.Point (@xPos + x), (@yPos) + y
-      # point = new paper.Point Math.floor(@TOTALWIDTH / 2), Math.floor(@TOTALHEIGHT / 2)
+      # point = new paper.Point (@xPos + x), (@yPos) + y
+      point = new paper.Point (i * distance), Math.floor(@TOTALHEIGHT)
       @path.add point
 
       # delta = new paper.Point(
@@ -180,32 +181,34 @@ class Renderer
       p = Math.round(((p / 1024) / 255) * 100)
 
       @signalEffects(p)
-
-
-
     # FLAT - OLD
-    # for i in [1..@path.segments.length - 2] by 1
-    #   magnitude = value[Math.round(i * (@PI * 0.9))] * @GOLDEN
-    #   @path.segments[(@path.segments.length - 1) - i].point.y = (@TOTALHEIGHT) - magnitude
-    # @path.fillColor = "hsla(#{ 255 - (value[@baseOffset] % 255)},30%,80%, 0.1)"
+    for i in [1..@path.segments.length - 2] by 1
+      unless i is 0 or 0 is (@BARS - 3)
+        magnitude = value[Math.round(i * (@PI * 0.9))] * @GOLDEN
+        @path.segments[(@path.segments.length - 1) - i].point.y = (@TOTALHEIGHT) - magnitude
+
+
+
+    @path.fillColor = "hsla(#{ 255 - (value[@baseOffset] % 255)},30%,80%, 0.1)"
       # "hsl(#{@hue},#{(value[@baseOffset] % 20)}%,90%)"
+
     # if @gapperDir is 'up' then @gapper += 1 else @gapper -= 1
     # if @gapper > 5 then @gapperDir = "down" else if @gapper is 1 then @gapperDir = "up"
 
-    # ROUND
-    # # console.log value
-    for i in [0...@BARS] by @gapper
+    # # ROUND
+    # # # console.log value
+    # for i in [0...@BARS] by @gapper
 
-        magnitude = value[i] * (@GOLDEN * (@ampVal / 10))
-        x = Math.floor((Math.cos(@baseAngle * i) * (@baseRadius + magnitude) + @xPos))
-        y = Math.floor((Math.sin(@baseAngle * i) * (@baseRadius + magnitude) + @yPos))
-        dot = @path.segments[(@path.segments.length - 1) - i]
-        dot.point.x = x 
-        dot.point.y = y
+    #     magnitude = value[i] * (@GOLDEN * (@ampVal / 10))
+    #     x = Math.floor((Math.cos(@baseAngle * i) * (@baseRadius + magnitude) + @xPos))
+    #     y = Math.floor((Math.sin(@baseAngle * i) * (@baseRadius + magnitude) + @yPos))
+    #     dot = @path.segments[(@path.segments.length - 1) - i]
+    #     dot.point.x = x 
+    #     dot.point.y = y
         
-      @path.smooth() if @smooth
-      
-      paper.view.draw()
+    @path.smooth() if @smooth
+    
+    paper.view.draw()
 
   hueChanger: ->
     # really cheap toggle
