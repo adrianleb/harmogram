@@ -1,0 +1,137 @@
+
+
+/* ===================================================================== *\
+        ****************** Main Scss Shuffler fm ******************
+
+                            ====================
+                            ::Table of Content::
+                            ====================
+
+======================================================================== */
+
+
+
+
+// =====================
+// global variables
+// =====================
+
+@import "nib"
+@import "application/_vars"
+
+
+@import "application/base/_reset"
+
+// @import "objects/nav"
+@import "application/objects/_canvas"
+// @import "objects/contents"
+
+html, body 
+  height 100%
+  width 100%
+  font-family: "proxima-nova"
+
+
+
+
+
+html {
+  font-size: 62.5%;
+  overflow:hidden;
+
+  height: 100%;
+}
+
+
+body {
+  font-size: 1.6rem;
+  background-color: white;
+  // background-color: #e6e7e6;
+  left: 0;
+  bottom:0;
+  padding: 0;
+  z-index: 1;
+  overflow:hidden;
+  -webkit-overflow-scrolling: touch;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+
+}
+
+h1 
+  margin 0
+  padding 0
+
+ul, li
+  list-style none
+  margin 0
+  padding 0
+button
+  -webkit-appearance:none
+  border: none
+
+  background-color transparent
+
+  box-shadow inset 0 0 0 3px rgba(black, 0.9)
+  display inline-block
+  // min-width 12rem
+  padding 0 3rem
+  font-weight 600
+  height 4rem
+  border-radius 0.4rem
+  color black
+
+
+
+
+.panels
+  position absolute
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+
+
+.containers
+  overflow scroll
+  height 100%
+  overflow-x hidden
+  -webkit-overflow-scrolling touch
+
+
+.cta-btn
+  display block
+  margin 0 auto
+  margin-top 15rem
+
+
+.nav
+  position absolute
+  top 0
+  right 0 
+  left 0 
+  height 6rem
+  background-color rgba(white, 0.4)
+  padding 0 1rem
+  padding-top 0.8rem
+  z-index 10
+
+.nav-btn
+  position absolute
+  right 1rem
+  top 50%
+  margin-top -2rem
+
+.wraps
+  height auto
+
+.playlist-panel
+  transform: translateX(-100%)
+  transition all 0.25s ease-out
+  padding-top 5rem 
+  z-index 9
+
+  &.open
+    transform:translateX(0%)

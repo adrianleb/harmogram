@@ -1,0 +1,10 @@
+<li>
+<br>
+<br>
+  <h1><%= @model.get('metadata').title%></h1>
+  <h2><%= @model.get('metadata').artist?.name%></h2>
+  <button data-index="<%= @index %>">play this</button>
+  <hr>
+  <hr>
+
+</li>

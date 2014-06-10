@@ -1,0 +1,1 @@
+class H.Model extends Backbone.Model

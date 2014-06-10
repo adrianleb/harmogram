@@ -1,0 +1,6 @@
+<div class="containers">
+  <div class="wraps">
+    <h1>Playlist</h1>
+    <ul id="tracks"></ul>
+  </div>
+</div>
