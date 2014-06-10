@@ -20,11 +20,6 @@
 @import "application/_vars"
 
 
-@import "application/base/_reset"
-
-// @import "objects/nav"
-@import "application/objects/_canvas"
-// @import "objects/contents"
 
 html, body 
   height 100%
@@ -84,6 +79,16 @@ button
   color black
 
 
+@import "application/base/_reset"
+
+// @import "objects/nav"
+@import "application/objects/_canvas"
+@import "application/objects/_lists"
+
+// @import "objects/contents"
+
+
+
 
 
 .panels
@@ -103,8 +108,34 @@ button
 
 .cta-btn
   display block
-  margin 0 auto
-  margin-top 15rem
+  position absolute
+  left 50%
+  top 50%
+  margin -6rem 0 0 -6rem
+  height 12rem
+  width 12rem
+  box-shadow inset 0 0 0 3px rgba(black, 0.9)
+  
+  border-radius 50%
+  font-size 0
+  padding 0
+  text-align center
+
+  &:before
+    content ""
+    width 0 
+    text-align center
+    height 0
+    display block
+    position absolute
+    top 50%
+    left 50%
+
+    border 3rem solid transparent
+    border-left: 4.5rem solid rgba(black, 0.7)
+    width: 0
+    margin -3rem 0 0 -1.7rem
+
 
 
 .nav
@@ -113,25 +144,50 @@ button
   right 0 
   left 0 
   height 6rem
-  background-color rgba(white, 0.4)
+  background-color rgba(darken(white, 5%), 0.8)
   padding 0 1rem
   padding-top 0.8rem
   z-index 10
+  text-align center
+  border-bottom 1px solid rgba(darken(white, 10%), 0.9)
+  h1
+    display inline-block
+    vertical-align top
+    padding-top 1.1rem
+    font-weight 900
+    opacity 0.6
+    font-size 2.3rem
 
 .nav-btn
   position absolute
-  right 1rem
+  display block
+  vertical-align top
+
+  padding 1rem
+  left 1rem
   top 50%
   margin-top -2rem
+  font-size 2rem
+  line-height 1
+  box-shadow none
 
 .wraps
   height auto
+
+.blurable
+  transition all 0.15s ease-in-out
+
+.blurred
+  transform scale(1.3)
+  // filter blur(4px)
 
 .playlist-panel
   transform: translateX(-100%)
   transition all 0.25s ease-out
   padding-top 5rem 
+  background-color transparent
   z-index 9
 
   &.open
+    background-color rgba(white, 0.7)
     transform:translateX(0%)

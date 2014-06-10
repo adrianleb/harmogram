@@ -5,6 +5,8 @@ class H.Views.NavBar extends H.View
 
   events:
     "click #open" : "openPlaylist"
+    "click h1" : "openPlaylist"
+
 
 
   initialize: ->
@@ -21,3 +23,6 @@ class H.Views.NavBar extends H.View
     console.log 'cricked!'
     e.preventDefault
     H.app.playlist.$el.toggleClass 'open'
+    _.defer (=>
+      $('#vCanvas').toggleClass 'blurred'
+      )

@@ -1,6 +1,8 @@
 //= require paper-full
 //= require soundjs-0.5.2.min
 //= require flashplugin-0.5.2.min
+//= require stackblur
+
 //= require shuffler
 //= require harmogram
 //= require_tree ./helpers

@@ -136,11 +136,13 @@ class H.Views.PlayerVisualizer extends H.View
 
 
   render: =>
-    if @runRenderer
-      window.webkitRequestAnimationFrame @render
-      @parent.analyser.getByteFrequencyData(@freqByteData)  # this gives us the frequency
-      @updatePath @freqByteData
+    limitLoop(@handleRender, 48)
+    # if @runRenderer
+      # window.webkitRequestAnimationFrame @render
 
 
+  handleRender: =>
+    @parent.analyser.getByteFrequencyData(@freqByteData)  # this gives us the frequency
+    @updatePath @freqByteData
 
 

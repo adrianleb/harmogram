@@ -38,6 +38,10 @@ class H.Views.Playlist extends H.View
     e.preventDefault()
     H.player.stop()
     _.delay (=>
+      H.app.playlist.$el.toggleClass 'open'
+      _.defer (=>
+        $('#vCanvas').toggleClass 'blurred'
+      )
       H.player.tracks.go parseFloat(e.currentTarget.getAttribute('data-index'))
       H.player.start()
     ), 10

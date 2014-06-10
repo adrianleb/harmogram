@@ -22,6 +22,28 @@ class H.Models.Player extends H.Model
     @tracks.injectChannel('pop')
 
 
+  initMediaElement: (url) ->
+    console.log 'did chrome mdoe!'
+    unless @playerElement?
+      el = "<audio id='playerElement' preload='none' autoplay='true' src='#{url}' ></audio>"
+      @playerElement = $(el).appendTo('body')
+      _.delay (=>        
+        @source = @context.createMediaElementSource(@playerElement[0])
+        @source.connect @analyser
+      ), 250
+
+    $.get url, (r) =>
+      @playerElement[0].src = r.file
+      _.defer (=>
+        @playerElement[0].play()
+        H.events.trigger "player:playback:new", track: @tracks.currentTrack() 
+      )
+      # @playerElement.on 'canplaythrough', (r) =>
+        # console.log 'ready to PLAYEEEERRR'
+      # @playerElement[0].play()
+
+
+
   initArrayBuffer: (url) ->
     $.get url, (r) =>
       console.log r
@@ -43,9 +65,13 @@ class H.Models.Player extends H.Model
 
 
   connectBuffer: (buffer) =>
+    unless @source?
+      @source = @context.createBufferSource()
+      @source.connect(@analyser)
     @source.buffer = buffer                  # tell the source which sound to play
     @source.start(0) unless @sourceStarted?
     @sourceStarted = true
+
     console.log 'whats up?'
     H.events.trigger "player:playback:new", track: @tracks.currentTrack()
 
@@ -60,8 +86,7 @@ class H.Models.Player extends H.Model
 
     @visualizer = new H.Views.PlayerVisualizer(@, {})
 
-    @source = @context.createBufferSource()
-    @source.connect(@analyser)     # connect the source to the context's destination (the speakers)
+    # connect the source to the context's destination (the speakers)
 
 
 
@@ -140,7 +165,10 @@ class H.Models.Player extends H.Model
   start:->
     $('body').attr('data-current-media-type', @tracks.currentMediaType() )
 
-    @initArrayBuffer("/welcome/stream?soundcloud_location=#{@tracks.currentTrack().get('stream').api_id}")
+    if window.chrome?
+      @initMediaElement("/welcome/stream?soundcloud_location=#{@tracks.currentTrack().get('stream').api_id}")
+    else 
+      @initArrayBuffer("/welcome/stream?soundcloud_location=#{@tracks.currentTrack().get('stream').api_id}")
     # @currentPlayer().start()
     # @player.src = location
     # if @tracks.currentMediaType() is 'soundcloud'
