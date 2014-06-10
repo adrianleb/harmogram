@@ -1,4 +1,0 @@
-simpleSounder
-=============
-
-audio API + backbone
