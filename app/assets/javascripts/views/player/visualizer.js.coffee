@@ -87,11 +87,12 @@ class H.Views.PlayerVisualizer extends H.View
 
 
   updateScreen: ->
-    @TOTALWIDTH = paper.view.size.width
-    @TOTALHEIGHT = paper.view.size.height
 
+    @TOTALWIDTH = window.innerWidth
+    @TOTALHEIGHT = window.innerHeight
     @xPos = (@TOTALWIDTH/@options.xOffset)
     @yPos = (@TOTALHEIGHT/@options.yOffset)
+    paper.view.viewSize = [@TOTALWIDTH, @TOTALHEIGHT]
 
   updatePath: (value) ->
     for i in [0...@options.bars] by @options.gaps

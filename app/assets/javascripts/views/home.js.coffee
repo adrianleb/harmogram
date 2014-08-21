@@ -7,13 +7,14 @@ class H.Views.Home extends H.View
     "click [data-index]": "playIndex"
   initialize: ->
     console.log 'home'
+    H.player.initStub()
     super
+    @listenTo e, 'player:player:ready', =>
+      @$('#play').hide()
 
   start: (e)->
     e.preventDefault()
     H.player.initWebAudio()
-    H.player.initStub()
-    @$(e.currentTarget).hide()
     
   next: (e) ->
     e.preventDefault()

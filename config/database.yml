@@ -4,8 +4,8 @@ default: &default
   encoding: utf8
   database: harmogram
   reconnect: false
-  username: harmogram
-  password: harmogram
+  username: shuffler
+  password: shuffler
 
 development:
   <<: *default

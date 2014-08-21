@@ -5,6 +5,7 @@ class H.Models.Player extends H.Model
 
 
   initialize: (args) ->
+    @playerReady = false
     @tracks = new H.Collections.PlayerTracks()
     @ui = new H.Views.PlayerUi()
     # @initWebAudio()
@@ -19,7 +20,7 @@ class H.Models.Player extends H.Model
 
 # http://soundcloud.vo.llnwd.net/1BrByxNx65Mg.128.mp3?AWSAccessKeyId=AKIAJNIGGLK7XA7YZSNQ&Expires=1401584705&Signature=8sr3bRLDtsvK9g1iRyF9MHxj7Fw%3D&e=1401584705&h=cc69831d9db7179b546fe1aedea1fcc5
   initStub: ->
-    @tracks.injectChannel('pop')
+    @tracks.injectChannel('__all__')
 
 
   initMediaElement: (url) ->
@@ -50,11 +51,10 @@ class H.Models.Player extends H.Model
       request = new XMLHttpRequest()
       request.overrideMimeType("text/plain; charset=x-user-defined")
       request.responseType = "stream" 
-
       request.open "GET", r.file, true
-
       request.responseType = "arraybuffer"
       
+
       # Decode asynchronously
       request.onload = =>
         @context.decodeAudioData request.response, @connectBuffer, (r, e, o) =>
@@ -72,35 +72,21 @@ class H.Models.Player extends H.Model
     @source.start(0) unless @sourceStarted?
     @sourceStarted = true
 
-    console.log 'whats up?'
     H.events.trigger "player:playback:new", track: @tracks.currentTrack()
 
 
   initWebAudio: ->
-    window.AudioContext = window.AudioContext || window.webkitAudioContext
-    @context = new AudioContext()
-    @analyser = @context.createAnalyser()
-    @analyser.fftSize = 256 # The size of the FFT used for frequency-domain analysis. This must be a power of two
-    @analyser.smoothingTimeConstant = 0.77 # A value from 0 -> 1 where 0 represents no time averaging with the last analysis frame
-    @analyser.connect(@context.destination)
+    unless @playerReady
+      window.AudioContext = window.AudioContext || window.webkitAudioContext
+      @context = new AudioContext()
+      @analyser = @context.createAnalyser()
+      @analyser.fftSize = 256 # The size of the FFT used for frequency-domain analysis. This must be a power of two
+      @analyser.smoothingTimeConstant = 0.77 # A value from 0 -> 1 where 0 represents no time averaging with the last analysis frame
+      @analyser.connect(@context.destination)
 
-    @visualizer = new H.Views.PlayerVisualizer(@, {})
+      @visualizer = new H.Views.PlayerVisualizer(@, {})
+      H.events.trigger "player:player:ready", track: @tracks.currentTrack()
 
-    # connect the source to the context's destination (the speakers)
-
-
-
-
-
-    # @source = @context.createMediaElementSource(@player)
-
-
-    # @source.connect(@analyser)
-
-    
-
-
-    # @initArrayBuffer("/welcome/stream")
 
 
 
@@ -122,10 +108,17 @@ class H.Models.Player extends H.Model
     @listenTo e, 'player:play:channel', (data) =>
       @tracks.injectChannel data.channelKey, data.startAt
 
-
+    @listenTo e, 'player:player:ready', =>
+      @playerReady = true
+      if @tracksReady?
+        @stop()
+        @start()
+        
     @listenTo e, 'player:tracks:ready', =>
-      @stop()
-      @start()
+      @tracksReady = true
+      if @playerReady
+        @stop()
+        @start()
 
     @listenTo e, 'player:playback:end', =>
       @stop()
@@ -192,6 +185,13 @@ class H.Models.Player extends H.Model
     # stop all players
     @player?.pause()
     @player?.currentTime = 0
+
+  playIndex: (i) ->
+    @tracks.go i
+    if @playerReady
+      @start()
+    else
+      @initWebAudio()
 
   # AudioPlayer entry point for setting volume.
   setVolume: (value) ->

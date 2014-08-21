@@ -42,6 +42,5 @@ class H.Views.Playlist extends H.View
       _.defer (=>
         $('#vCanvas').toggleClass 'blurred'
       )
-      H.player.tracks.go parseFloat(e.currentTarget.getAttribute('data-index'))
-      H.player.start()
+      H.player.playIndex(parseFloat(e.currentTarget.getAttribute('data-index')))
     ), 10

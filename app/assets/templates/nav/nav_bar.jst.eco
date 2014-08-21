@@ -1,2 +1,4 @@
 <h1>Harmogram</h1>
 <button id="open" class="nav-btn">&#9776;</button>
+<button id="openUser" class="nav-btn nav-btn-user">Login</button>
+

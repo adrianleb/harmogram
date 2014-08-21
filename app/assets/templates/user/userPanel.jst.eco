@@ -1,0 +1,7 @@
+<div class="containers">
+  <div class="wraps">
+    <h1>Login with Soundcloud first</h1>
+
+    <a href="#" id="soundcloudLogin" class="btn soundcloud-btn">Login with Soundcloud</a>
+  </div>
+</div>

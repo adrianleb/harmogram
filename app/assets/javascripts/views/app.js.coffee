@@ -8,6 +8,8 @@ class H.Views.App extends H.View
     console.debug "INITIALIZED MAIN VIEW"
     window.mainContent = @
     @playlist = new H.Views.Playlist()
+    @userPanel = new H.Views.UserPanel()
+
     @nav = new H.Views.NavBar()
     console.log 'done?'
 

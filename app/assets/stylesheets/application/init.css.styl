@@ -28,8 +28,12 @@ html, body
 
 
 
+top_padding = 9rem
 
 
+*:focus {
+    outline: 0;
+}
 html {
   font-size: 62.5%;
   overflow:hidden;
@@ -99,6 +103,7 @@ button
   bottom:0;
 
 
+
 .containers
   overflow scroll
   height 100%
@@ -106,6 +111,16 @@ button
   -webkit-overflow-scrolling touch
 
 
+.btn
+  min-width 10rem
+  padding 0 2rem
+  height 3.8rem
+  line-height 2
+  border 2px solid black
+  display inline-block
+  color black
+  margin 1rem 1rem
+  border-radius 2rem
 .cta-btn
   display block
   position absolute
@@ -144,12 +159,13 @@ button
   right 0 
   left 0 
   height 6rem
-  background-color rgba(darken(white, 5%), 0.8)
+  background-color transparent
+  // background-color rgba(darken(white, 5%), 0.5)
   padding 0 1rem
   padding-top 0.8rem
   z-index 10
   text-align center
-  border-bottom 1px solid rgba(darken(white, 10%), 0.9)
+  // border-bottom 1px solid rgba(darken(white, 10%), 0.9)
   h1
     display inline-block
     vertical-align top
@@ -173,6 +189,7 @@ button
 
 .wraps
   height auto
+  text-align center
 
 .blurable
   transition all 0.15s ease-in-out
@@ -181,13 +198,60 @@ button
   transform scale(1.3)
   // filter blur(4px)
 
-.playlist-panel
+.playlist-panel, .user-panel
   transform: translateX(-100%)
   transition all 0.25s ease-out
-  padding-top 5rem 
+  padding-top top_padding
   background-color transparent
   z-index 9
 
   &.open
     background-color rgba(white, 0.7)
     transform:translateX(0%)
+
+
+
+.user-panel
+  transform: translateX(100%)
+  
+.nav-btn-user
+  display block
+  position absolute
+  right 1rem
+  left auto
+  font-size 1.6rem
+  font-weight 600
+  border 2px solid lighten(black, 15%)
+  color lighten(black, 15%)
+  // top 50%
+  // margin-top -0.5rem
+
+@media (min-width: 600px) 
+  .panels
+    right auto
+    left auto
+    max-width 30%
+    min-width 32rem
+  .user-panel
+    right 0
+  .nav 
+    text-align left
+    padding-left 6rem
+
+
+  .playlist-panel, .user-panel
+    padding-top 0
+
+  .playlist-panel
+    &:before
+      content ""
+      display block
+      background red
+      left 0
+      right 0
+      top 0
+      height 7rem
+      position absolute
+      background rgba(white, 0.9)
+      z-index 3      
+    

@@ -17,6 +17,10 @@ window.H =
     console.debug 'Harmogram Initializing'
     SHUFFLER.initialize {appKey: "a5a5a5a"}
     
+    SC.initialize
+      client_id: "5ae3a12aef6952a4dd801d1bde3386b6"
+      redirect_uri: "http://localhost:3000/redirect_uri"
+
     @events = _.extend({}, Backbone.Events)
     @player = new H.Models.Player()
     
