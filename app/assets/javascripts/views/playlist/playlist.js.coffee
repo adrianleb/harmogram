@@ -10,6 +10,8 @@ class H.Views.Playlist extends H.View
   initialize: ->
     console.log 'playlist init'
     @render()
+    # @fetchChannels()
+    
     super
 
     @listenTo H.player.tracks, "add", (m, r) =>
@@ -27,6 +29,12 @@ class H.Views.Playlist extends H.View
 
     @$('#tracks').append JST['track'](model:m, index:H.player.tracks.indexOf(m))
     
+
+  fetchChannels: ->
+    H.channels = new H.Collections.Channels()
+    H.channels.fetch().done =>
+      console.log 'la', H.channels
+
 
   next: (e) ->
     e.preventDefault()

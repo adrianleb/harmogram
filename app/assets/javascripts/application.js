@@ -10,4 +10,7 @@
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views
+//= require_tree ./player
+//= require ./player/player
+
 //= require_tree ./routers

@@ -1,6 +1,10 @@
+<ul class="selector-playlist">
+<li><a href="#">Channels</a></li>
+<li><a href="#" class="selected">Tracks</a></li> 
+</ul>
 <div class="containers">
   <div class="wraps">
-    <h1>Playlist</h1>
+    <ul id="channels"></ul>
     <ul id="tracks"></ul>
   </div>
 </div>

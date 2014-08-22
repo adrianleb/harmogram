@@ -7,7 +7,7 @@ class H.Models.Player extends H.Model
   initialize: (args) ->
     @playerReady = false
     @tracks = new H.Collections.PlayerTracks()
-    @ui = new H.Views.PlayerUi()
+    # @ui = new H.Views.PlayerUi()
     # @initWebAudio()
     # @initMic()
     @initEvents()

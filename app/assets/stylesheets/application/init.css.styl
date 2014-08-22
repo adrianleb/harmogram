@@ -194,9 +194,10 @@ button
 .blurable
   transition all 0.15s ease-in-out
 
+
 .blurred
-  transform scale(1.3)
-  // filter blur(4px)
+  // transform scale(1.3)
+  filter blur(1px)
 
 .playlist-panel, .user-panel
   transform: translateX(-100%)
@@ -206,7 +207,7 @@ button
   z-index 9
 
   &.open
-    background-color rgba(white, 0.7)
+    // background-color rgba(white, 0.7)
     transform:translateX(0%)
 
 
@@ -226,6 +227,18 @@ button
   // top 50%
   // margin-top -0.5rem
 
+.selector-playlist
+  text-align left
+  margin-top 6rem
+  padding-left 2rem
+  li
+    display inline-block
+    width 10rem
+    a
+      color lighten(black, 50%)
+      &.selected
+        color black
+
 @media (min-width: 600px) 
   .panels
     right auto
@@ -238,9 +251,15 @@ button
     text-align left
     padding-left 6rem
 
+  .blurred
+  // transform scale(1.3)
+    filter blur(0px)
 
+    
   .playlist-panel, .user-panel
     padding-top 0
+    .wraps
+      padding-top 9rem
 
   .playlist-panel
     &:before
@@ -252,6 +271,6 @@ button
       top 0
       height 7rem
       position absolute
-      background rgba(white, 0.9)
+      background rgba(white, 0.2)
       z-index 3      
     
