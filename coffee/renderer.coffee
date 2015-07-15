@@ -112,7 +112,7 @@ class Renderer
     @TOTALWIDTH = paper.view.size.width
     @TOTALHEIGHT = paper.view.size.height
     @xPos = (@TOTALWIDTH/@xOffset)
-    @yPos = (@TOTALHEIGHT/@yOffset) 
+    @yPos = (@TOTALHEIGHT/@yOffset)
 
 
   initEvents: ->
@@ -125,7 +125,7 @@ class Renderer
       @runRenderer = false
       _.delay ( =>
         @runRenderer = true
-      # unless 
+      # unless
       # @initImage()
         @render()
       ), 100
@@ -136,7 +136,7 @@ class Renderer
 
     # trigger for window resize
     debouncedresize = _.debounce ( => @updatePos() ), 10
-    $(window).resize => 
+    $(window).resize =>
       debouncedresize()
 
 
@@ -200,11 +200,11 @@ class Renderer
         x = Math.floor((Math.cos(@baseAngle * i) * (@baseRadius + magnitude) + @xPos))
         y = Math.floor((Math.sin(@baseAngle * i) * (@baseRadius + magnitude) + @yPos))
         dot = @path.segments[(@path.segments.length - 1) - i]
-        dot.point.x = x 
+        dot.point.x = x
         dot.point.y = y
-        
+
       @path.smooth() if @smooth
-      
+
       paper.view.draw()
 
   hueChanger: ->
@@ -217,14 +217,14 @@ class Renderer
 
         if Sounder.renderer.hue > 250 then Sounder.renderer.hueDirection = "down"
         else if Sounder.renderer.hue < 10 then Sounder.renderer.hueDirection = "up"
-        if @radiusDir is 'up' 
+        if @radiusDir is 'up'
           @radiusDir = 'down'
         else if @radiusDir is 'down'
           @radiusDir = 'up'
 
         @changer()
       ), 1000
-    
+
 
     # start the chain
     @changer()
@@ -232,8 +232,8 @@ class Renderer
 
   render: ->
     if Sounder.renderer.runRenderer
-      window.webkitRequestAnimationFrame Sounder.renderer.render
-      Sounder.control.analyser.getByteFrequencyData Sounder.renderer.freqByteData 
+      window.requestAnimationFrame Sounder.renderer.render
+      Sounder.control.analyser.getByteFrequencyData Sounder.renderer.freqByteData
       Sounder.renderer.shader Sounder.renderer.freqByteData
 
 

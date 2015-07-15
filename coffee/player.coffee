@@ -19,14 +19,14 @@ class Player
 
     $(@).on 'playLast', (e) => @playLast()
 
-    $(@).on 'playIndex', (e, index) => 
+    $(@).on 'playIndex', (e, index) =>
       if @currentTrack is index and @isPlaying
         @pauseCurrent()
       else
         @currentTrack = index
         @playCurrent()
 
-    $(@).on 'playAudio', (e, audio) => 
+    $(@).on 'playAudio', (e, audio) =>
       i = @audioPlayers.indexOf audio
       if @currentTrack is i and @isPlaying
         @pauseCurrent()
@@ -64,13 +64,14 @@ class Player
   playCurrent: () ->
     if @isPlaying
       @pauseCurrent()
-    current = @audioPlayers[@currentTrack]
-    current.play()
-    homer.$('.active').removeClass 'active'
-    homer.scrollCurrent()
-    $(current).parent().addClass 'active'
-    $(Sounder.renderer).trigger 'start'
-    @isPlaying = true
+    if @audioPlayers[@currentTrack]
+      current = @audioPlayers[@currentTrack]
+      current.play()
+      homer.$('.active').removeClass 'active'
+      homer.scrollCurrent()
+      $(current).parent().addClass 'active'
+      $(Sounder.renderer).trigger 'start'
+      @isPlaying = true
 
 
 (->

@@ -37,11 +37,11 @@ function(__obj) {
   }
   (function() {
     (function() {
-      var _ref, _ref1, _ref2, _ref3;
+      var ref, ref1, ref2, ref3;
     
       __out.push('  <div class="track__image" style="background-image:url(');
     
-      __out.push(__sanitize((_ref = this.model.get('object').images) != null ? (_ref1 = _ref.medium) != null ? _ref1.url : void 0 : void 0));
+      __out.push(__sanitize((ref = this.model.get('object').images) != null ? (ref1 = ref.medium) != null ? ref1.url : void 0 : void 0));
     
       __out.push(')">\n    <img id="img_');
     
@@ -49,7 +49,7 @@ function(__obj) {
     
       __out.push('"src="');
     
-      __out.push(__sanitize((_ref2 = this.model.get('object').images) != null ? (_ref3 = _ref2.medium) != null ? _ref3.url : void 0 : void 0));
+      __out.push(__sanitize((ref2 = this.model.get('object').images) != null ? (ref3 = ref2.medium) != null ? ref3.url : void 0 : void 0));
     
       __out.push('" alt="">\n  </div>\n  <div class="track__info">\n    <h1 class="track__artist">');
     

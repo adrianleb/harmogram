@@ -3,7 +3,9 @@ class SounderControl
 
   init: ->
     @initEvents()
-    @context = new window.webkitAudioContext()
+    AudioContext = window.AudioContext || window.webkitAudioContext
+    @context = new AudioContext()
+
     @analyser = @context.createAnalyser()
     @_plug @analyser, @context.destination
 
@@ -25,12 +27,14 @@ class SounderControl
       do (plug) =>
         source = @context.createMediaElementSource(plug)
         source.connect @analyser
+        plug.crossOrigin = "anonymous";
         $(Sounder.player).trigger 'newAudio', plug
 
 
   plugOne: (el)->
     source = @context.createMediaElementSource(el)
     source.connect @analyser
+    el.crossOrigin = "anonymous";
     $(Sounder.player).trigger 'newAudio', el
 
 
