@@ -6,6 +6,10 @@
     Views: {},
     Routers: {},
     init: function() {
+      SC.initialize({
+        client_id: '5ae3a12aef6952a4dd801d1bde3386b6',
+        redirect_uri: 'http://harmogram.com/'
+      });
       this.Routers.main = new Sounder.Routers.Main();
       return Backbone.history.start();
     }

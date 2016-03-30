@@ -12,7 +12,12 @@
 
     Tracks.prototype.model = Sounder.Models.Track;
 
-    Tracks.prototype.url = 'http://api.shuffler.fm/v1/channels/chillout?api-key=kscothchd0q6c7u2pfw1';
+    Tracks.prototype.fetch = function(options) {
+      var data;
+      options || (options = {});
+      data = options.data || {};
+      return Backbone.Collection.prototype.fetch.call(this, options);
+    };
 
     return Tracks;
 

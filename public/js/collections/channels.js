@@ -12,7 +12,7 @@
 
     Channels.prototype.model = Sounder.Models.Channel;
 
-    Channels.prototype.url = 'http://api.shuffler.fm/v1/genres?api-key=kscothchd0q6c7u2pfw1';
+    Channels.prototype.url = 'channels.json';
 
     return Channels;
 

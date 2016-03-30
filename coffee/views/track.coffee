@@ -16,8 +16,9 @@ class Sounder.Views.Track extends Backbone.View
 
 
   render: ->
+    console.log(@model, @template, @template(model:@model))
     @$el.html(@template(model:@model))
-    
+
 
     # here we set the event listener for the track ending, on the audio element of this view
     @$('audio').on 'ended', (e) =>

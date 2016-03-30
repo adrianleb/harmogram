@@ -8,4 +8,3 @@ coffee --output public/js/routers/ --watch --compile coffee/routers/*.coffee &
 coffee --output public/js/collections/ --watch --compile coffee/collections/*.coffee &
 compass watch --sass-dir scss/ --css-dir public/css/ --output-style compressed --debug-info --trace &
 ./eco-compiler.js &
-guard &

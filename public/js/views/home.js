@@ -45,22 +45,16 @@
       return this.$el.toggleClass('open--about');
     };
 
-    Home.prototype.fetchTracks = function() {
-      return this.tracks.fetch({
-        dataType: 'jsonp',
-        success: (function(_this) {
-          return function() {
-            var tracks;
-            tracks = _.filter(_this.tracks.models, function(t) {
-              return t.attributes.object.stream.platform === 'soundcloud';
-            });
-            _this.tracks.models = [];
-            _this.tracks.models = tracks;
-            _this.render();
-            return _this.renderTracks();
-          };
-        })(this)
-      });
+    Home.prototype.fetchTracks = function(url) {
+      return SC.get('/tracks', {
+        genres: url
+      }).then((function(_this) {
+        return function(res) {
+          _this.tracks.add(res);
+          _this.render();
+          return _this.renderTracks();
+        };
+      })(this));
     };
 
     Home.prototype.handleHoverOut = function(e) {
@@ -201,7 +195,6 @@
 
     Home.prototype.fetchChannels = function() {
       return this.channels.fetch({
-        dataType: 'jsonp',
         success: (function(_this) {
           return function() {
             return _this.renderChannels();
@@ -241,8 +234,7 @@
 
     Home.prototype.changeChannel = function(url) {
       Sounder.player.emptyPlayer();
-      this.tracks.url = url;
-      this.fetchTracks();
+      this.fetchTracks(url);
       this.$('#channel-current').html(this.currentChannel);
       return this.goTracks();
     };
@@ -258,6 +250,7 @@
         v = new Sounder.Views.Track({
           model: t
         });
+        console.log(v);
         $('#track-list').append(v.$el);
         i++;
       }
@@ -267,6 +260,19 @@
           return $(Sounder.player).trigger('playAudio', $('audio')[Math.round(Math.random() * $('audio').length) - 1]);
         };
       })(this)), 10);
+    };
+
+    Home.prototype.getSoundcloud = function(url) {
+      var jsonp, script;
+      jsonp = document.createElement('script');
+      script = document.getElementsByTagName('script')[0];
+      jsonp.type = 'text/javascript';
+      jsonp.async = true;
+      jsonp.src = url;
+      window.jsonpResponse = function(hey) {
+        return console.log('wat', hey);
+      };
+      return script.parentNode.insertBefore(jsonp, script);
     };
 
     Home.prototype.scrollCurrent = function() {

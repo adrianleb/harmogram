@@ -42,16 +42,14 @@ class Sounder.Views.Home extends Backbone.View
     @$el.toggleClass 'open--about'
 
 
-  fetchTracks: ->
-    @tracks.fetch 
-          dataType:'jsonp'
-          success: =>
-            tracks = _.filter @tracks.models, (t) =>
-              t.attributes.object.stream.platform is 'soundcloud'
-            @tracks.models = []
-            @tracks.models = tracks
-            @render()
-            @renderTracks()
+  fetchTracks: (url) ->
+    SC.get('/tracks',
+      genres: url
+    ).then (res) =>
+      @tracks.add(res)
+      @render()
+      @renderTracks()
+
 
   handleHoverOut: (e) ->
     if e.type is 'mouseleave' and @tracksVisible
@@ -105,7 +103,7 @@ class Sounder.Views.Home extends Backbone.View
       @tracksVisible = true
       unless first
         @scrollCurrent()
-      # 
+      #
 
 
 
@@ -119,7 +117,7 @@ class Sounder.Views.Home extends Backbone.View
     $('.open--about').removeClass 'open--about'
     $('.menu--active').removeClass 'menu--active'
     $(el).addClass 'menu--active'
- 
+
 
   keyboardInit: ->
 
@@ -146,7 +144,7 @@ class Sounder.Views.Home extends Backbone.View
       else if e.which is 39
         if @channelsVisible then @goTracks()
         else if @tracksVisible then @goControls()
-      
+
       # space
       else if e.which is 32
         if Sounder.player.isPlaying
@@ -161,10 +159,9 @@ class Sounder.Views.Home extends Backbone.View
 
   fetchChannels: ->
     @channels.fetch
-          dataType:'jsonp'
           success: =>
             @renderChannels()
-          
+
 
   renderChannels: ->
     $('#channel-list').empty()
@@ -188,20 +185,23 @@ class Sounder.Views.Home extends Backbone.View
 
   changeChannel: (url) ->
     Sounder.player.emptyPlayer()
-    @tracks.url = url
-    @fetchTracks()
+    # baseUrl = 'https://api-v2.soundcloud.com/charts?client_id=5ae3a12aef6952a4dd801d1bde3386b6&kind=trending&genre='
+    # @tracks.url = baseUrl + url + '&callback=jsonpResponse'
+    @fetchTracks(url)
+    # @getSoundcloud(@tracks.url)
     @$('#channel-current').html @currentChannel
     @goTracks()
 
 
 
-  renderTracks: -> 
+  renderTracks: ->
     i = 0
     $('#track-list').empty()
 
     for t in @tracks.models
       t.trackIndex = i
       v = new Sounder.Views.Track(model:t)
+      console.log(v)
       $('#track-list').append v.$el
       i++
 
@@ -221,6 +221,17 @@ class Sounder.Views.Home extends Backbone.View
   #   @goTracks()
   #   Sounder.player.currentTrack = i
 
+
+
+  getSoundcloud:(url) ->
+    jsonp   = document.createElement('script')
+    script  = document.getElementsByTagName('script')[0]
+    jsonp.type  = 'text/javascript'
+    jsonp.async = true
+    jsonp.src   = url
+    window.jsonpResponse = (hey) ->
+      console.log('wat', hey)
+    script.parentNode.insertBefore(jsonp, script)
 
 
   scrollCurrent: () ->

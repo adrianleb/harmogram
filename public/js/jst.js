@@ -403,11 +403,9 @@ JST['track'] = function(__obj) {
   }
   (function() {
     (function() {
-      var ref, ref1, ref2, ref3;
-    
       __out.push('  <div class="track__image" style="background-image:url(');
     
-      __out.push(__sanitize((ref = this.model.get('object').images) != null ? (ref1 = ref.medium) != null ? ref1.url : void 0 : void 0));
+      __out.push(__sanitize(this.model.get('artwork_url')));
     
       __out.push(')">\n    <img id="img_');
     
@@ -415,17 +413,17 @@ JST['track'] = function(__obj) {
     
       __out.push('"src="');
     
-      __out.push(__sanitize((ref2 = this.model.get('object').images) != null ? (ref3 = ref2.medium) != null ? ref3.url : void 0 : void 0));
+      __out.push(__sanitize(this.model.get('artwork_url')));
     
       __out.push('" alt="">\n  </div>\n  <div class="track__info">\n    <h1 class="track__artist">');
     
-      __out.push(__sanitize(this.model.get('object').metadata.artist.name));
+      __out.push(__sanitize(this.model.get('user').username));
     
       __out.push('</h1>\n    <h2 class="track__title">');
     
-      __out.push(__sanitize(this.model.get('object').metadata.title));
+      __out.push(__sanitize(this.model.get('title')));
     
-      __out.push('</h2>\n  </div>\n  <audio id="source');
+      __out.push('</h2>\n  </div>\n\n  <audio id="source');
     
       __out.push(__sanitize(this.model.trackIndex));
     
@@ -435,11 +433,9 @@ JST['track'] = function(__obj) {
     
       __out.push('" src="');
     
-      __out.push(__sanitize(this.model.get('object').stream.url));
+      __out.push(__sanitize(this.model.get('stream_url')));
     
-      __out.push(__sanitize(this.model.get('object').stream.platform === 'soundcloud' ? '?client_id=c280d0c248513cfc78d7ee05b52bf15e' : '?api-key=zlspn5imm91ak2z7nk3g'));
-    
-      __out.push('" ></audio>\n');
+      __out.push('?client_id=c280d0c248513cfc78d7ee05b52bf15e" ></audio>\n');
     
     }).call(this);
     

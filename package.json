@@ -1,0 +1,27 @@
+{
+  "name": "harmogram",
+  "version": "1.0.0",
+  "description": "soundcloud + web audio API + paper.js = ❤️",
+  "main": "eco-compiler.js",
+  "dependencies": {
+    "eco": "^1.1.0-rc-3"
+  },
+  "devDependencies": {
+    "coffee": "^3.2.1",
+    "guard": "^0.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./compiler"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianleb/harmogram.git"
+  },
+  "author": "Adrian le Bas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrianleb/harmogram/issues"
+  },
+  "homepage": "https://github.com/adrianleb/harmogram#readme"
+}
