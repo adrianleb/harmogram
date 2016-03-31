@@ -1,5 +1,5 @@
 // icons
-// 
+//
 @font-face {
   font-family: 'harmogram-icons';
   src:url('fonts/icomoon.eot');
@@ -57,9 +57,9 @@ $testcolor:#f24021;
 
 
 @-webkit-keyframes spin {
-  0%   { -webkit-transform:rotate3d(0,0,1,0deg); }
+  0%   { transform:rotate3d(0,0,1,0deg); }
   100% {
-   -webkit-transform:rotate3d(0,0,1,720deg);
+   transform:rotate3d(0,0,1,720deg);
    }
 }
 
@@ -169,12 +169,12 @@ blockquote {
 
 .wrap {
   @include clearfix;
-  -webkit-transition:all 0.5s ease-out;
+  transition:all 0.5s ease-out;
   -moz-transition:all 0.5s ease-out;
   transition:all 0.5s ease-out;
   // body.flap_about & {
-      // -webkit-transform:translateX(-90%);
-    // } 
+      // transform:translateX(-90%);
+    // }
 }
 
 
@@ -196,7 +196,7 @@ footer {
   right:0;
   background-color:#F0EDE6;
 
-  -webkit-transition:all 0.25s linear;
+  transition:all 0.25s linear;
   -moz-transition:all 0.25s linear;
   transition:all 0.25s linear;
 
@@ -275,11 +275,11 @@ h2 {
 
 
 // do font opacity thigny
-// 
+//
 
   body {
     opacity:1;
-    -webkit-transition:opacity 0.25s linear;
+    transition:opacity 0.25s linear;
     -moz-transition:opacity 0.25s linear;
     transition:opacity 0.25s linear;
     .wf-loading:not(.wf-inactive) & {opacity:0;}
@@ -297,7 +297,7 @@ h2 {
     right:0;
     bottom:0;
     z-index: -1;
-    -webkit-transform:translate3d(0,0,0) rotate3d(0,0,1,0deg);
+    transform:translate3d(0,0,0) rotate3d(0,0,1,0deg);
     -webkit-backface-visibility:hidden;
     -webkit-perspective:1000;
     // background-image: -webkit-radial-gradient(black, white);

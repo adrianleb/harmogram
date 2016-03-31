@@ -16,7 +16,6 @@ class Sounder.Views.Track extends Backbone.View
 
 
   render: ->
-    console.log(@model, @template, @template(model:@model))
     @$el.html(@template(model:@model))
 
 

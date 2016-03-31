@@ -46,7 +46,7 @@ class Sounder.Views.Home extends Backbone.View
     SC.get('/tracks',
       genres: url
     ).then (res) =>
-      @tracks.add(res)
+      @tracks.reset(res)
       @render()
       @renderTracks()
 
@@ -175,21 +175,22 @@ class Sounder.Views.Home extends Backbone.View
 
     # ugly hacky way to pick a channel, way, jump to track
     pick = @channelViews[Math.round(Math.random() * @channelViews.length) - 1].el
-    $(pick).addClass 'active'
     _.delay ( =>
       @$el.animate {scrollTop: (pick.offsetTop - (Sounder.renderer.TOTALHEIGHT/2.4))}, 500, () =>
         _.delay ( =>
+          console.log(pick);
           $(pick).click()
         ), 500
     ), 500
 
-  changeChannel: (url) ->
+  changeChannel: (url, $el) ->
+    $('.channel--active').removeClass('channel--active')
+    $el.addClass 'channel--active'
     Sounder.player.emptyPlayer()
     # baseUrl = 'https://api-v2.soundcloud.com/charts?client_id=5ae3a12aef6952a4dd801d1bde3386b6&kind=trending&genre='
     # @tracks.url = baseUrl + url + '&callback=jsonpResponse'
     @fetchTracks(url)
     # @getSoundcloud(@tracks.url)
-    @$('#channel-current').html @currentChannel
     @goTracks()
 
 
@@ -201,7 +202,6 @@ class Sounder.Views.Home extends Backbone.View
     for t in @tracks.models
       t.trackIndex = i
       v = new Sounder.Views.Track(model:t)
-      console.log(v)
       $('#track-list').append v.$el
       i++
 

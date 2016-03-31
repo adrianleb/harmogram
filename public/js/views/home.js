@@ -50,7 +50,7 @@
         genres: url
       }).then((function(_this) {
         return function(res) {
-          _this.tracks.add(res);
+          _this.tracks.reset(res);
           _this.render();
           return _this.renderTracks();
         };
@@ -218,13 +218,13 @@
         this.channelViews.push(v);
       }
       pick = this.channelViews[Math.round(Math.random() * this.channelViews.length) - 1].el;
-      $(pick).addClass('active');
       return _.delay(((function(_this) {
         return function() {
           return _this.$el.animate({
             scrollTop: pick.offsetTop - (Sounder.renderer.TOTALHEIGHT / 2.4)
           }, 500, function() {
             return _.delay((function() {
+              console.log(pick);
               return $(pick).click();
             }), 500);
           });
@@ -232,10 +232,11 @@
       })(this)), 500);
     };
 
-    Home.prototype.changeChannel = function(url) {
+    Home.prototype.changeChannel = function(url, $el) {
+      $('.channel--active').removeClass('channel--active');
+      $el.addClass('channel--active');
       Sounder.player.emptyPlayer();
       this.fetchTracks(url);
-      this.$('#channel-current').html(this.currentChannel);
       return this.goTracks();
     };
 
@@ -250,7 +251,6 @@
         v = new Sounder.Views.Track({
           model: t
         });
-        console.log(v);
         $('#track-list').append(v.$el);
         i++;
       }

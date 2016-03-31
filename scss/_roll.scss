@@ -10,8 +10,8 @@
     // margin-top: -20rem;
     z-index: 9;
     -webkit-backface-visibility: hidden;
-    -webkit-transition:all 0.4s ease-out, -webkit-transform 0.4s ease-out 0s;
- 
+    transition:all 0.4s ease-out, transform 0.4s ease-out 0s;
+
   &:before {
   content:"Tracks";
   font-size: 8rem;
@@ -27,13 +27,13 @@
   }
 
   .track__model {
-    -webkit-transition:all 0.4s ease-out, -webkit-transform 0.4s ease-out 0.5s;
+    transition:all 0.4s ease-out, transform 0.4s ease-out 0.5s;
     position: relative;
     display: block;
     width:100%;
     height: 0;
     padding-bottom: 10rem;
-    // -webkit-transform:translate3d(0, 0, 0);
+    // transform:translate3d(0, 0, 0);
     margin-bottom: 6rem;
     img {
       // transform:;
@@ -45,21 +45,21 @@
       opacity: 1;
     }
     &.active {
-      -webkit-transition:all 0.4s ease-out, -webkit-transform 0.4s ease-out 0s;
-     -webkit-transform:translate3d(5rem,0,0);
-     // -webkit-transform:translateX(10%);
+      transition:all 0.4s ease-out, transform 0.4s ease-out 0s;
+     transform:translate3d(5rem,0,0);
+     // transform:translateX(10%);
     }
-  &:not(.active) { 
-  // -webkit-transform:translateX(-100%);   
-    -webkit-transform:translate3d(-40rem,0,0);
+  &:not(.active) {
+  // transform:translateX(-100%);
+    transform:translate3d(-40rem,0,0);
   }
   }
   .track__wrap:hover .track__model{
-    -webkit-transition:all 0.4s ease-out, -webkit-transform 0.4s ease-out 0s;
-    -webkit-transform:translate3d(0,0,0);
+    transition:all 0.4s ease-out, transform 0.4s ease-out 0s;
+    transform:translate3d(0,0,0);
     &.active {
-      -webkit-transition:all 0.4s ease-out, -webkit-transform 0.4s ease-out 0.5s;
-     -webkit-transform:translate3d(1rem,0,0);
+      transition:all 0.4s ease-out, transform 0.4s ease-out 0.5s;
+     transform:translate3d(1rem,0,0);
     }
   }
   .track__image {
@@ -90,22 +90,22 @@
       font-size: 1.3rem;
       color:lighten(black, 10%);
       margin-bottom: 0.4rem;
-       -webkit-transition:all 0.4s ease-out;
+       transition:all 0.4s ease-out;
     }
     .track__title {
       @include trunk;
       color:lighten(black, 10%);
       font-size: 1.2rem;
-       -webkit-transition:all 0.4s ease-out;
+       transition:all 0.4s ease-out;
       -webkit-font-smoothing:antialiased!important;
     }
     .active & {
       .track__artist, .track__title {
         color: red;
         color: rgba(black, 0.6);
-        overflow: auto; 
-        white-space: normal; 
-        text-overflow: ellipsis; 
+        overflow: auto;
+        white-space: normal;
+        text-overflow: ellipsis;
         // font-size: 1.2rem;
         &:first-line {
           color: #1A1A1A;
@@ -117,32 +117,32 @@
           &:first-line {
             // font-size: 1.7rem;
           }
-        
+
       }
         .track__title {
           // font-size: 1.1rem;
           &:first-line {
             // font-size: 1.4rem;
           }
-        
+
       }
     }
   }
 
   .track__wrap:hover ~ canvas {
     // left: 80%;
-  
+
   }
 
   .open--channels .track__wrap {
     position: fixed;
-         -webkit-transform:translate3d(20rem,0,0);
+         transform:translate3d(20rem,0,0);
          opacity:0;
         pointer-events:none;
          .track__model {
-              -webkit-transform:translate3d(0,0,0);
+              transform:translate3d(0,0,0);
               &.active {
-               -webkit-transform:translate3d(3rem,0,0);
+               transform:translate3d(3rem,0,0);
               }
          }
 
@@ -155,6 +155,6 @@
 
   .open--controls .track__wrap {
     position: fixed;
-  -webkit-transform:translate3d(-40rem,0,0);
+  transform:translate3d(-40rem,0,0);
   opacity: 0;
 }

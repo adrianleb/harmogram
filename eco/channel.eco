@@ -1,4 +1,4 @@
-  <div class="track__image" style="background-image:url(<%= @model.get('image')%>)">
+  <div class="track__image" style="background-image:url(./img/<%= @model.get('channel_url')%>.jpg)">
   </div>
   <div class="track__info">
     <h1 class="track__artist"><%= @model.get('name') %></h1>

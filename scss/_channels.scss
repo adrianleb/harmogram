@@ -6,8 +6,8 @@
   top: 0;
   padding-left: 5rem;
   padding-top: 20%;
-  -webkit-transition:all 0.4s ease-out, -webkit-transform 0.4s ease-out 0s;
-  -webkit-transform:translate3d(-40rem,0,0);
+  transition:all 0.4s ease-out, transform 0.4s ease-out 0s;
+  transform:translate3d(-40rem,0,0);
 
   &:before {
     content:"Channels";
@@ -36,11 +36,11 @@
   left: -2rem;
   // display: block;
   width: 55rem;
-  -webkit-transform-origin:0 100%;
+  transform-origin:0 100%;
   // background-color: red;
   line-height: 1;
   opacity: 0.02;
-    -webkit-transform:translate3d(0,0,0) rotateZ(90deg);
+    transform:translate3d(0,0,0) rotateZ(90deg);
 }
 
 .channel__trigger {
@@ -78,22 +78,22 @@
   &:hover {
     opacity: 1;
   }
-   &.active {
+   &.channel--active {
     opacity: 1;
-      -webkit-transition:all 0.4s ease-out, -webkit-transform 0.4s ease-out 0s;
-     -webkit-transform:translate3d(5rem,0,0);
-     // -webkit-transform:translateX(10%);
+      transition:all 0.4s ease-out, transform 0.4s ease-out 0s;
+     transform:translate3d(5rem,0,0);
+     // transform:translateX(10%);
     }
 }
   .open--channels .channel__wrap {
     position: relative;
 
-      -webkit-transform:translate3d(0,0,0);
+      transform:translate3d(0,0,0);
    }
 
 .open--input .channel__wrap {
   position: fixed;
-     -webkit-transform:translate3d(20rem,0,0);
+     transform:translate3d(20rem,0,0);
    opacity:0;
    pointer-events:none;
 }

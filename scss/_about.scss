@@ -1,7 +1,7 @@
 article {
   -webkit-perspective: 1000;
   -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) translateX(-200%);
+  transform: translateZ(0) translateX(-200%);
   -moz-transform: translateZ(0) translateX(-200%);
   transform: translateZ(0) translateX(-200%);
   display:block;
@@ -14,7 +14,7 @@ article {
   z-index:555;
   background-color:hsla(0,0%,10%,0.10);
   padding:1.5%;
-  -webkit-transition:-webkit-transform 0.5s cubic-bezier(0.765, -0.100, 0.200, 1.035);
+  transition:transform 0.5s cubic-bezier(0.765, -0.100, 0.200, 1.035);
   -moz-transition:-moz-transform 0.5s cubic-bezier(0.765, -0.100, 0.200, 1.035);
   transition:transform 0.5s cubic-bezier(0.765, -0.100, 0.200, 1.035);
 
@@ -60,7 +60,7 @@ p {
       color:hsla(0,0%,10%, 1);
     }
     &:active{
-     background-color:hsla(0,0%,10%,0.05); 
+     background-color:hsla(0,0%,10%,0.05);
     }
   }
 
@@ -75,33 +75,33 @@ p {
     // right:5%;
   }
   &.light {
-    background-color:hsla(0,0%,90%,0.05);    
+    background-color:hsla(0,0%,90%,0.05);
     color:hsl(0,0%,90%);
 
     .aboutClose {
-      background-color:hsla(0,0%,90%,0.15);    
+      background-color:hsla(0,0%,90%,0.15);
       color:hsla(0,0%,90%, 0.8);
           &:hover {
       background-color:hsla(0,0%,90%,0.40);
       color:hsla(0,0%,90%, 1);
     }
     &:active{
-     background-color:hsla(0,0%,90%,0.05); 
+     background-color:hsla(0,0%,90%,0.05);
     }
     }
   }
 
   body.flap_about & {
-      -webkit-transform: translateZ(0) translateX(0%);
+      transform: translateZ(0) translateX(0%);
       -moz-transform: translateZ(0) translateX(0%);
       transform: translateZ(0) translateX(0%);
   }
-  @include respond(until, '800px') { 
+  @include respond(until, '800px') {
     position:absolute;
     top:6rem;
     display:block;
     left:5%;
-    -webkit-transform: translateZ(0) translateX(0%);
+    transform: translateZ(0) translateX(0%);
     -moz-transform: translateZ(0) translateX(0%);
     transform: translateZ(0) translateX(0%);
     width:90%;

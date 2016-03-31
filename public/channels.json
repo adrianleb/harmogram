@@ -1,116 +1,91 @@
 [{
-  "image": "http://assets.shuffler.fm/tracks/92b3622be13cbb852f91ea2e0b6b1b54/240x240.jpg",
-  "channel_url": "electronic",
-  "id": 13,
-  "name": "electronic"
+  "channel_url": "ambientrock",
+  "name": "ambient rock"
 }, {
-  "image": "http://assets.shuffler.fm/tracks/f6f24d02b4c87779fd2a50910043f039/240x240.jpg",
-  "channel_url": "indie",
-  "id": 22,
-  "name": "indie"
-}, {
-  "image": "http://assets.shuffler.fm/tracks/06426daaf9b276612ec8717c997cb972/240x240.jpg",
-  "channel_url": "hiphoprap",
-  "id": 2,
-  "name": "hip-hop"
-}, {
-  "image": "http://assets.shuffler.fm/tracks/8b6381a0680bf96f4dbd779c81eaf603/240x240.jpg",
-  "channel_url": "folksingersongwriter",
-  "id": 85,
-  "name": "folk"
-}, {
-  "image": "http://assets.shuffler.fm/tracks/11864d046b87dde259c8f21d5912cbe2/240x240.jpg",
-  "channel_url": "rock",
-  "id": 16,
-  "name": "rock"
-}, {
-  "image": "http://assets.shuffler.fm/tracks/86c9b143875a7a196ce3c94dfb52e45c/240x240.jpg",
-  "channel_url": "dubstep",
-  "id": 5,
-  "name": "dubstep"
-}, {
-  "image": "http://assets.shuffler.fm/tracks/54af9d674f5930d534a3e9dd42bf5249/240x240.jpg",
-  "channel_url": "pop",
-  "id": 310,
-  "name": "pop"
-}, {
-  "image": "http://assets.shuffler.fm/tracks/087cfdb94de4400a635d7ef371e2561e/240x240.jpg",
-  "channel_url": "house",
-  "id": 187,
-  "name": "house"
-}, {
-  "image": "http://assets.shuffler.fm/tracks/34758e8253a501a9070602d4f562e8b9/240x240.jpg",
-  "channel_url": "rbsoul",
-  "id": 55,
-  "name": "soul"
-}, {
-  "image": "http://assets.shuffler.fm/tracks/bbf500c2656f2b61a5bebc89897ec4e1/240x240.jpg",
   "channel_url": "ambient",
-  "id": 41,
   "name": "ambient"
 }, {
-  "image": "http://assets.shuffler.fm/tracks/92b3622be13cbb852f91ea2e0b6b1b54/240x240.jpg",
   "channel_url": "electronic",
-  "id": 25,
   "name": "electronic"
 }, {
-  "image": "http://assets.shuffler.fm/tracks/9fb960cb00f8e00e17b5d9b8dbde1321/240x240.jpg",
+  "channel_url": "indie",
+  "name": "indie"
+}, {
+  "channel_url": "hiphoprap",
+  "name": "hip-hop"
+}, {
+  "channel_url": "folksingersongwriter",
+  "name": "folk"
+}, {
+  "channel_url": "classical",
+  "name": "classical"
+}, {
+  "channel_url": "rock",
+  "name": "rock"
+}, {
+  "channel_url": "dubstep",
+  "name": "dubstep"
+}, {
+  "channel_url": "pop",
+  "name": "pop"
+}, {
+  "channel_url": "house",
+  "name": "house"
+}, {
+  "channel_url": "electronic",
+  "name": "electronic"
+}, {
   "channel_url": "jazzblues",
-  "id": 325,
   "name": "jazz"
 }, {
-  "image": "http://assets.shuffler.fm/tracks/ad8ba0c46186525f0a5807814c2c6bfe/240x240.jpg",
-  "channel_url": "dance",
-  "id": 99,
-  "name": "dance"
+  "channel_url": "danceedm",
+  "name": "dance & EDM"
 }, {
-  "image": "http://assets.shuffler.fm/tracks/ba0f2565c313262f39db28c5830ac980/240x240.jpg",
+  "channel_url": "dancehall",
+  "name": "dance hall"
+}, {
+  "channel_url": "latin",
+  "name": "latin"
+}, {
+  "channel_url": "piano",
+  "name": "piano"
+}, {
   "channel_url": "drumbass",
-  "id": 1211,
   "name": "drum and bass"
 }, {
-  "image": "http://assets.shuffler.fm/tracks/9b01bfad601658983c01d6559ddd946a/240x240.jpg",
   "channel_url": "disco",
-  "id": 109,
   "name": "disco"
 }, {
-  "image": "http://assets.shuffler.fm/tracks/e5959267f67187cb2741da8953abeb5a/240x240.jpg",
-  "channel_url": "chillout",
-  "id": 303,
-  "name": "chillout"
-}, {
-  "image": "http://assets.shuffler.fm/tracks/12c78abb196faf88680beff8583a980e/240x240.jpg",
   "channel_url": "deephouse",
-  "id": 289,
   "name": "deep house"
 }, {
-  "image": "http://assets.shuffler.fm/tracks/8393a0d4f300710e4b0860d642f48371/240x240.jpg",
-  "channel_url": "triphop",
-  "id": 161,
-  "name": "trip-hop"
-}, {
-  "image": "http://assets.shuffler.fm/tracks/404f5ff4c0f5c68a43568b70ff14832d/240x240.jpg",
   "channel_url": "country",
-  "id": 2061,
   "name": "country"
 }, {
-  "image": "http://assets.shuffler.fm/tracks/cf91201f3fd4fb77462297fbab6f6232/240x240.jpg",
   "channel_url": "electronic",
-  "id": 29,
   "name": "electronic"
 }, {
-  "image": "http://assets.shuffler.fm/tracks/f0cc2a9815fbd0d0c9f836f23a91ec08/240x240.jpg",
   "channel_url": "reggae",
-  "id": 472,
   "name": "reggae"
 }, {
-  "image": "http://assets.shuffler.fm/tracks/f14806bfc4b8b77325e587a9c68f6f29/240x240.jpg",
+  "channel_url": "reggaeton",
+  "name": "reggaeton"
+}, {
+  "channel_url": "rbsoul",
+  "name": "soul"
+}, {
+  "channel_url": "soundtrack",
+  "name": "soundtrack"
+}, {
   "channel_url": "trance",
-  "id": 238,
   "name": "trance"
 }, {
-  "image": "http://assets.shuffler.fm/tracks/f827496fa66608c8f017550c29494240/240x240.jpg",
   "channel_url": "trap",
-  "id": 101036,
   "name": "trap"
+}, {
+  "channel_url": "triphop",
+  "name": "trip-hop"
+}, {
+  "channel_url": "world",
+  "name": "world"
 }]

@@ -37,11 +37,11 @@ function(__obj) {
   }
   (function() {
     (function() {
-      __out.push('  <div class="track__image" style="background-image:url(');
+      __out.push('  <div class="track__image" style="background-image:url(./img/');
     
-      __out.push(__sanitize(this.model.get('image')));
+      __out.push(__sanitize(this.model.get('channel_url')));
     
-      __out.push(')">\n  </div>\n  <div class="track__info">\n    <h1 class="track__artist">');
+      __out.push('.jpg)">\n  </div>\n  <div class="track__info">\n    <h1 class="track__artist">');
     
       __out.push(__sanitize(this.model.get('name')));
     

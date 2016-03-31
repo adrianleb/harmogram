@@ -34,7 +34,7 @@
 
     Channel.prototype.changeChannel = function(e) {
       this.parent.currentChannel = this.model.get('name');
-      return this.parent.changeChannel(this.model.get('channel_url'));
+      return this.parent.changeChannel(this.model.get('channel_url'), this.$el);
     };
 
     return Channel;

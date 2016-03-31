@@ -22,4 +22,4 @@ class Sounder.Views.Channel extends Backbone.View
 
   changeChannel: (e)->
     @parent.currentChannel = @model.get('name')
-    @parent.changeChannel @model.get('channel_url')
+    @parent.changeChannel @model.get('channel_url'), @$el
