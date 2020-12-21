@@ -8,6 +8,9 @@ class SounderControl
 
     @analyser = @context.createAnalyser()
     @_plug @analyser, @context.destination
+    $('#first-gesture').click () => 
+      @context.resume()
+      $('#first-gesture').hide()
 
   constructor: ->
     @loaded = false

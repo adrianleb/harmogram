@@ -124,6 +124,10 @@ class Renderer
     $(@).on 'start', =>
       @runRenderer = false
       _.delay ( =>
+        console.log(Sounder.control.context.state, 'state')
+        if Sounder.control.context.state != 'suspended'
+          $('#first-gesture').hide()
+
         @runRenderer = true
       # unless
       # @initImage()
